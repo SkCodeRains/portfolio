@@ -1,0 +1,114 @@
+:root {
+    --rotateSpeed: 30s;
+    --bounceSpeed: 2s;
+}
+
+#moon {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 100%;
+    background-color: rgb(225, 211, 211);
+    animation: fade 2s forwards;
+    
+
+    @keyframes fade {
+        from {
+            scale: 0;
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+}
+
+#home {
+    position: relative;
+    background-color: transparent;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow: hidden;
+    position: relative;
+    perspective: 100em;
+    perspective-origin: 50% calc(50% - 20em);
+
+    .intro-panel {
+        .intro {
+            background: rgb(31, 0, 77);
+            background: linear-gradient(90deg, rgba(31, 0, 77, 1) 12%, #330080 90%);
+            border-radius: 5rem;
+            width: min(90%, 40rem, 50rem);
+            height: min(100%, 40rem, 50rem);
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                transform: rotate(-45deg);
+                right: 23%;
+                bottom: calc(-2% - 4rem);
+                border-left: 8rem solid transparent;
+                border-right: 8rem solid transparent;
+                border-bottom: 8rem solid #330080;
+                z-index: -1;
+
+                @media screen and (max-width:1200px) {
+                    bottom: -15%;
+                    right: 20%;
+                    transform: rotate(-45deg) !important;
+                    border-left: 4rem solid transparent;
+                    border-right: 4rem solid transparent;
+                    border-bottom: 4rem solid #330080;
+                }
+            }
+        }
+    }
+
+    .bg {
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .image {
+        height: 600px !important;
+        width: 400px;
+        position: relative;
+
+        img {
+            object-fit: contain;
+            background-color: transparent;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 600px !important;
+            border: 10px red solid;
+            border-radius: 60rem;
+            width: 400px;
+            left: -10%;
+        }
+
+        .covers {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

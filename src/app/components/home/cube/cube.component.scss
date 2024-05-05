@@ -1,0 +1,61 @@
+:root {
+    --translateZ: 1rem;
+}
+
+.cube {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: sceneRotate 10s linear;
+    transition: 4s;
+    // font-size: 10%;
+
+    @keyframes sceneRotate {
+        to {
+            transform: rotateY(360deg) rotateX(360deg);
+        }
+    }
+
+
+
+    .left,
+    .right,
+    .front,
+    .back,
+    .top,
+    .bottom {
+        // border-radius: 50%;
+        background-color: #1575ad78;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        box-shadow: inset 0px 0px 2px 1px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .front {
+        transform: translateZ(var(--translateZ));
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(var(--translateZ));
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(var(--translateZ));
+    }
+
+    .left {
+        transform: rotateY(270deg) translateZ(var(--translateZ));
+    }
+
+    .top {
+        transform: translateY(-50%) rotateX(90deg);
+    }
+
+    .bottom {
+        transform: translateY(50%) rotateX(90deg);
+    }
+}

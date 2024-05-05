@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual"
+    viewBox="0 0 1000 500" width="100%" height="100%" version="1.1">
+    <g fill="#F5F5F5">
+        <circle r="80" cx="101" cy="410" />
+        <circle r="50" cx="891" cy="410" />
+        <circle r="70" cx="201" cy="90" />
+    </g>
+    <g id="myFish" xmlns="http://www.w3.org/2000/svg" transform="translate(440,286)">
+        <path
+            d="M95.1 -50.1C125.3 -2.7 153.1 50.9 136.9 91.6C120.7 132.3 60.3 160.2 -2.3 161.5C-65 162.8 -129.9 137.7 -159.8 89.1C-189.7 40.5 -184.5 -31.5 -152 -80.2C-119.5 -129 -59.8 -154.5 -13.6 -146.6C32.5 -138.8 65 -97.5 95.1 -50.1"
+            fill="#BB004B" />
+    </g>
+</svg>
