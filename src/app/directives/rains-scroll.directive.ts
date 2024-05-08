@@ -10,7 +10,7 @@ export class RainsScrollDirective {
 
   private _scrollAmount: number = 0;
   startY: number = 0;
-  threshold: number = 100;
+  threshold: number = 50;
 
   public get scrollAmount(): number {
     return this._scrollAmount;

@@ -10,10 +10,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {    
     setTimeout(() => {
       // window.location.reload();
-    }, 5000);
+      // alert(window.innerHeight);  
+
+    }, 2000);
   }
 
 }

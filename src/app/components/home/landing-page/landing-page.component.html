@@ -1,7 +1,7 @@
-<section id="home" class="overflow-hidden h-100 w-100" [class.active]="active">
+<section id="home" class=" h-100 w-100" [class.active]="active">
     <div class="introduction">
         <div appSlideInOut direction="left" [inView]="active"
-            class="text-section vw-100 vh-100 d-flex flex-column justify-content-center align-items-start  overflow-hidden">
+            class="text-section vw-100 vh-100 d-flex flex-column justify-content-center align-items-start  ">
             <div class="name position-relative text-uppercase  ">
                 Mohammed <br> Shaikh
             </div>
@@ -16,8 +16,8 @@
 
         </div>
     </div>
-    <div class="space vw-100 vh-100">
-        <div class="stars" appParallax appSlideInOut direction="right" [enable]="active" [inView]="active">
+    <div class="space vw-100 vh-100 ">
+        <div class="stars overflow-visible" appParallax appSlideInOut direction="right" [enable]="active" [inView]="active">
             <div class="layer" data-depth="0.3">
                 <img src="./assets/images/cloud1.svg" show-at="1">
             </div>
@@ -36,7 +36,7 @@
             <div class="layer" data-depth="0.3">
                 <img src="./assets/images/cloud2.svg" show-at="1">
             </div>
-            <div class="layer d-flex justify-content-cen ter align-items-center text-uppercase" data-depth="0.3">
+            <div class="layer d-flex overflow-visible align-items-center text-uppercase " data-depth="0.3">
                 <div show-at="4" class="text-danger">Portfolio</div>
             </div>
         </div>
