@@ -29,14 +29,14 @@ export class HomeComponent {
     active: () => this.scrollAmount == -1,
     highText: "Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains.",
     pageTitle: "About Me",
-    imageSource: "./assets/images/about_me2.png"
+    imageSource: "assets/images/about_me2.png"
   };
 
   projectsConfig: any = {
     active: () => this.scrollAmount == -2,
     highText: "Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains.",
     pageTitle: "Projects",
-    imageSource: "./assets/images/projects.jpg"
+    imageSource: "assets/images/projects.jpg"
   };
 
 
@@ -44,7 +44,7 @@ export class HomeComponent {
     active: () => this.scrollAmount == -3,
     highText: "Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains.",
     pageTitle: "Contact Me",
-    imageSource: "./assets/images/contact.jpg"
+    imageSource: "assets/images/contact.jpg"
   };
 
 }
