@@ -1,6 +1,7 @@
 @echo off
  
 
+rmdir /s /q "docs"
 REM Define source and destination directories
 set "source_dir=dist\portfolio\browser"
 set "destination_dir=docs"
