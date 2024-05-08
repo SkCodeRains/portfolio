@@ -5,8 +5,7 @@
 .cube {
     position: absolute;
     transform-style: preserve-3d;
-    animation: sceneRotate 10s linear;
-    transition: 4s;
+    animation: sceneRotate 10s infinite; 
     // font-size: 10%;
 
     @keyframes sceneRotate {

@@ -1,0 +1,44 @@
+<section id="home" class="overflow-hidden h-100 w-100" [class.active]="active">
+    <div class="introduction">
+        <div appSlideInOut direction="left" [inView]="active"
+            class="text-section vw-100 vh-100 d-flex flex-column justify-content-center align-items-start  overflow-hidden">
+            <div class="name position-relative text-uppercase  ">
+                Mohammed <br> Shaikh
+            </div>
+            <br>
+            <div>
+                <div class="liners position-relative">
+                    <span class="bg-danger"></span>
+                    <span class="bg-danger"></span>
+                </div>
+                <h2 class="high-text">Hi I'm a <br>Full stack web Developer </h2>
+            </div>
+
+        </div>
+    </div>
+    <div class="space vw-100 vh-100">
+        <div class="stars" appParallax appSlideInOut direction="right" [enable]="active" [inView]="active">
+            <div class="layer" data-depth="0.3">
+                <img src="./assets/images/cloud1.svg" show-at="1">
+            </div>
+            <div class="layer" data-depth="0.3">
+                <img src="./assets/images/cloud2.svg" show-at="1">
+            </div>
+            <div class="layer" data-depth="0.2">
+                <img src="./assets/images/moon.svg" show-at="2">
+            </div>
+            <div class="layer" data-depth="0.4">
+                <img src="./assets/images/cloud1.svg" show-at="3">
+            </div>
+            <div class="layer" data-depth="0.4">
+                <img src="./assets/images/cloud3.svg" show-at="3">
+            </div>
+            <div class="layer" data-depth="0.3">
+                <img src="./assets/images/cloud2.svg" show-at="1">
+            </div>
+            <div class="layer d-flex justify-content-cen ter align-items-center text-uppercase" data-depth="0.3">
+                <div show-at="4" class="text-danger">Portfolio</div>
+            </div>
+        </div>
+    </div>
+</section>

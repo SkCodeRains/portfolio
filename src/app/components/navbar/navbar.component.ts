@@ -1,4 +1,6 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild, inject } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[#app-navbar]',
@@ -9,7 +11,9 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 })
 export class NavbarComponent {
 
-  @Output('navigateTo') loadPage: EventEmitter<number> = new EventEmitter<number>()
+  folioService = inject(PortfolioService);
+  router = inject(Router);
+
   @ViewChild("links") ul!: ElementRef;
 
   toggle(div: HTMLDivElement) {
@@ -21,9 +25,13 @@ export class NavbarComponent {
       link.classList.remove("active");
     }
     element.classList.add("active");
+    let page = element.querySelector("a")?.getAttribute("data");
+    this.router.navigate([page], { skipLocationChange: true });
   }
 
-  navigateTo(pageNumber: number) { 
-    this.loadPage.emit(pageNumber)
+  navigateTo(pageNumber: number) {
+    this.folioService.scrollAmount = pageNumber;
+    console.log(this.folioService);
+    
   }
 }

@@ -1,78 +1,235 @@
-section#home {
-    background-color: rgb(125, 106, 83);
-    height: 100vh;
-    width: 100vw;
-    perspective: 10em;
-    perspective-origin: 50% calc(50% - 3em);
+section.portfolio {
+    overflow-x: hidden;
+    overflow-y: hidden;
 
-    .floor {
-        // background-color: black;
-        z-index: -1;
+    .full-width-div {
+        width: 100vw;
+        height: calc(100vh);
+
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        filter: blur (10px);
+
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+                scale: 0;
+                filter: blur(10rem);
+            }
+
+            40% {
+                filter: blur(1rem);
+            }
+
+            50% {
+                opacity: 1;
+                scale: 1;
+                filter: blur(0);
+
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+    }
+
+
+}
+
+
+::ng-deep {
+    .introduction {
+        .text-section {
+            margin-left: 8rem;
+
+            .high-text {
+                width: clamp(40vw, 30rem, 90vw);
+                text-justify: auto;
+            }
+        }
+
+        .show-more {
+            padding: 0.5rem 3rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            transition: all 0.1568s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:hover {
+                transform: translateY(5px);
+            }
+
+            &:active {
+                scale: 0.95;
+            }
+        }
+
+
+        .name {
+            font-size: clamp(3rem, 5vw, 8vw);
+            line-height: 1;
+            letter-spacing: 0.1em;
+            // margin-bottom: 0.5rem;
+            font-family: system-ui;
+            font-weight: bolder;
+            text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+        }
+
+
+        .liners {
+            width: 6rem;
+
+            span {
+                display: block;
+                width: 5rem;
+                margin: 1rem;
+                height: 0.5rem;
+                border-radius: 3rem;
+                transition: all 1s;
+            }
+
+            :first-of-type {
+                animation: slide-left-right 2s infinite ease-out;
+            }
+
+            :last-of-type {
+                // margin-left: 10rem;
+                animation: slide-left-right 2s infinite ease-out reverse;
+            }
+
+            @keyframes slide-left-right {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                50% {
+                    transform: translateX(15%);
+                }
+
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+        }
+    }
+
+    @media screen and (orientation:portrait) {
+        .text-section {
+            padding-top: 50%;
+            margin-left: 2rem !important;
+        }
+    }
+
+    .space {
         position: absolute;
-        transform-style: preserve-3d;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -100;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        overflow: hidden;
 
-        width: 175vw;
-        height: 25vh;
-        background-image: radial-gradient(rgba(0, 0, 0, 0), #000), repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
-        background-size: 100%, 1em 1em;
-        transform: translate(-22%, -85%) rotateX(75deg);
-        bottom: 0;
-    }
-
-    .content {
-
-        // z-index: 10;
-
-        .box {
-            // width: 50vw;
-            // height: 50vw;
-
-            height: clamp(30rem,60vh,70vh);
-            width: clamp(25rem,60vw,70vw);
-
-            // @media screen and (orientation: landscape) {
-            //     width: 80vh;
-            //     height: 50vh;
-            // }
-
-            z-index: 2;
-            background-color: #fff;
-            // transform: translate(-20%, 0%) rotateX(0deg);
-
+        @media screen and (orientation:portrait) {
+            // margin-top: 5rem;
+            align-items: start !important;
         }
-    }
 
-    .pots {
-        img {
+        .stars {
             position: absolute;
-            bottom: 0;
-            display: none;
+
+            @media screen and (orientation:portrait) {
+                width: 140vw;
+                height: 140vw;
+                top: -10%;
+                left: 20%;
+            }
+
+            /* Landscape */
+            @media screen and (orientation:landscape) {
+                width: 160vh;
+                height: 160vh;
+                left: 40%;
+            }
+
+
+            .layer {
+                height: 100%;
+                width: 100%;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                position: absolute;
+                display: block;
+                left: 0px;
+                top: 0px;
+                padding: 10px;
+
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    // box-sizing: border-box;
+                }
+            }
+
         }
 
-        .pot1 {
-            // display: block;
-            transform: translate(8%, -75%) rotateX(0deg);
-            width: clamp(10rem,20rem,30rem);
-        }
 
-        .pot2 {
-            transform-origin: bottom;
-            transform: translate(10%, 0%) rotateX(0deg);
-            height: 95%;
-            right: 0;
-        }
 
-        .pot3 {
-            transform: translate(10%, 33%) rotateX(0deg);
-            height: 45%;
+    }
+}
 
-        }
 
-        .pot4 {
-            transform: translate(10%, 33%) rotateX(0deg);
-            height: 95%;
-            z-index: 3;
+
+.side-nav {
+
+    @media screen and (orientation:landscape) {
+        width: 6rem;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        flex-direction: column;
+
+        span {
+            margin: 1rem 0;
+            width: 3.5rem;
+            padding: 3px;
+            height: 5px;
+            background-color: white;
+            border-radius: 3rem;
+
+            &.active {
+                width: 5rem;
+            }
         }
 
     }
+
+    @media screen and (orientation:portrait) {
+        width: 100vw;
+        height: 6rem;
+        position: absolute;
+        left: 0;
+        bottom: 2vh;
+        z-index: 9999;
+
+        span {
+            margin: 0 1rem;
+            width: 3.5rem;
+            transform: rotateZ(90deg);
+            padding: 3px;
+            height: 5px;
+            background-color: white;
+            border-radius: 3rem;
+
+            &.active {
+                width: 5rem;
+            }
+        }
+    }
+
 }

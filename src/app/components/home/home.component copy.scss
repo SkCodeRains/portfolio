@@ -9,7 +9,7 @@
     border-radius: 100%;
     background-color: rgb(225, 211, 211);
     animation: fade 2s forwards;
-    
+
 
     @keyframes fade {
         from {
@@ -112,3 +112,83 @@
         align-items: center;
     }
 }
+
+
+// section#home {
+//     background-color: rgb(125, 106, 83);
+//     height: 100vh;
+//     width: 100vw;
+//     perspective: 10em;
+//     perspective-origin: 50% calc(50% - 3em);
+
+//     .floor {
+//         // background-color: black;
+//         z-index: -1;
+//         position: absolute;
+//         transform-style: preserve-3d;
+
+//         width: 175vw;
+//         height: 25vh;
+//         background-image: radial-gradient(rgba(0, 0, 0, 0), #000), repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
+//         background-size: 100%, 1em 1em;
+//         transform: translate(-22%, -85%) rotateX(75deg);
+//         bottom: 0;
+//     }
+
+//     .content {
+
+//         // z-index: 10;
+
+//         .box {
+//             // width: 50vw;
+//             // height: 50vw;
+
+//             height: clamp(30rem,60vh,70vh);
+//             width: clamp(25rem,60vw,70vw);
+
+//             // @media screen and (orientation: landscape) {
+//             //     width: 80vh;
+//             //     height: 50vh;
+//             // }
+
+//             z-index: 2;
+//             background-color: #fff;
+//             // transform: translate(-20%, 0%) rotateX(0deg);
+
+//         }
+//     }
+
+//     .pots {
+//         img {
+//             position: absolute;
+//             bottom: 0;
+//             display: none;
+//         }
+
+//         .pot1 {
+//             // display: block;
+//             transform: translate(8%, -75%) rotateX(0deg);
+//             width: clamp(10rem,20rem,30rem);
+//         }
+
+//         .pot2 {
+//             transform-origin: bottom;
+//             transform: translate(10%, 0%) rotateX(0deg);
+//             height: 95%;
+//             right: 0;
+//         }
+
+//         .pot3 {
+//             transform: translate(10%, 33%) rotateX(0deg);
+//             height: 45%;
+
+//         }
+
+//         .pot4 {
+//             transform: translate(10%, 33%) rotateX(0deg);
+//             height: 95%;
+//             z-index: 3;
+//         }
+
+//     }
+// }
