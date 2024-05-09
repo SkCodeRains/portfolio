@@ -20,10 +20,10 @@
     class="portfolio portfolio-container position-absolute top-0">
     <div class="full-width-div" id="app-landing-page" [active]="scrollAmount==0" [class.bg-active]="scrollAmount==0">
     </div>
-    <div class="full-width-div" id="app-generic" [config]="aboutConfig" [class.bg-active]="scrollAmount==-1">
+    <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig" [class.bg-active]="scrollAmount==-1">
     </div>
-    <div class="full-width-div" id="app-generic" [config]="projectsConfig" [class.bg-active]="scrollAmount==-2">
+    <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig" [class.bg-active]="scrollAmount==-2">
     </div>
-    <div class="full-width-div" id="app-generic" [config]="contactConfig" [class.bg-active]="scrollAmount==-3">
+    <div class="full-width-div" id="app-generic" (navigate)="navigateTo('contact')" [config]="contactConfig" [class.bg-active]="scrollAmount==-3">
     </div>
 </section>

@@ -7,7 +7,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class SlideInOutDirective {
 
   element: HTMLElement;
-  cubic: any = "transition: transform 1.1568s cubic-bezier(0.645, 0.045, 0.355, 1) 0s";
+  cubic: any = "transition: all 1.1568s cubic-bezier(0.645, 0.045, 0.355, 1) 0s";
   forward: boolean = false;
   constructor(element: ElementRef) {
     this.element = element.nativeElement;
@@ -82,10 +82,11 @@ export class SlideInOutDirective {
   }
 
   translateX(to: number) {
-    this.element.setAttribute("style", `${this.cubic};transform:translateX(${to}vw);`);
+    this.element.setAttribute("style", `${this.cubic};transform:translateX(${to}vw);opacity:${Math.abs(to)==100?0:1}`);
   }
 
   translateY(to: number) {
-    this.element.setAttribute("style", `${this.cubic}transform:translateY(${to}vh);`);
+    this.element.setAttribute("style", `${this.cubic};transform:translateY(${to}vw);opacity:${Math.abs(to)==100?0:1}`);
+
   }
 }

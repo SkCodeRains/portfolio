@@ -2,9 +2,17 @@
     .space {
         .stars {
             .layer {
-                img {
-                    width: 100%;
-                    left: 0;
+                .image-cover {
+                    width: 90%;
+                    height: 60%;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    img { 
+                        left: 0;
+                        width: auto !important;
+                        height: 100%;
+                        object-fit: contain; 
+                    }
                 }
             }
         }
@@ -17,8 +25,6 @@
     }
 
     .space {
-        // z-index: 0;
-
         .stars {
             left: 0%;
 
@@ -106,6 +112,7 @@
                 }
 
                 @keyframes fade-slice2 {
+
                     0%,
                     40% {
                         width: 10%;

@@ -3,7 +3,7 @@
     <div class="introduction">
         <div appSlideInOut direction="left" [inView]="active()"
             class="text-section vw-100 vh-100 d-flex flex-column justify-content-center align-items-start  ">
-            <div class="name position-relative  ">
+            <div class="name position-relative overflow-visible  ">
                 {{pageTitle}}
             </div>
             <br>
@@ -12,16 +12,16 @@
                     <span class="bg-danger"></span>
                     <span class="bg-danger"></span>
                 </div>
-                <h2 class="high-text text-justify">{{highText}}</h2>
+                <div class="high-text text-justify pe-2">{{highText}}</div>
 
             </div>
-            <button class="btn btn-danger show-more">
-                Explore
+            <button class="btn btn-danger show-more" (click)="navigateTo()" >
+                Explore More !
             </button>
         </div>
     </div>
     <div class="space vw-100 vh-100">
-        <div class="stars" appSlideInOut direction="right" [inView]="active()">
+        <div class="stars btn" appSlideInOut direction="right" [inView]="active()">
             <div class="layer" data-depth="0.3">
                 <div class="image-cover" [class.active]="active()">
                     <img [src]="imageSource" alt="">

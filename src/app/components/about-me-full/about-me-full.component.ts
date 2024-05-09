@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-me-full',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './about-me-full.component.scss'
 })
 export class AboutMeFullComponent {
+  
+  constructor(private router: Router) { }  // Inject Router in constructor
+
+  goto() {
+    this.router.navigate(['home'], { skipLocationChange: true });
+  }
 
 }

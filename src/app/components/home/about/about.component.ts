@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ParallaxDirective } from '../../../directives/parallax.directive';
 import { SlideInOutDirective } from '../../../directives/slide-in-out.directive';
 
@@ -10,6 +10,8 @@ import { SlideInOutDirective } from '../../../directives/slide-in-out.directive'
   styleUrl: './about.component.scss'
 })
 export class GenericComponent {
+  @Output() navigate = new EventEmitter<void>();
+
   @Input() config!: any;
   get active() {
     return this.config.active;
@@ -24,5 +26,8 @@ export class GenericComponent {
 
   get pageTitle() {
     return this.config.pageTitle;
+  }
+  navigateTo() {
+    this.navigate.emit();
   }
 }

@@ -13,8 +13,8 @@ section.portfolio {
         }
 
 
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-        filter: blur (10px);
+        // background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        // filter: blur (10px);
 
 
         @keyframes fade {
@@ -53,7 +53,8 @@ section.portfolio {
 
             .high-text {
                 width: clamp(40vw, 30rem, 90vw);
-                text-justify: auto;
+                text-align: justify;
+                font-size: clamp(2vw,2rem,4vw);
             }
         }
 
@@ -136,10 +137,10 @@ section.portfolio {
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -100;
         display: flex;
         justify-content: right;
         align-items: center;
+        z-index: -1;
 
         @media screen and (orientation:portrait) {
             // margin-top: 5rem;
@@ -158,8 +159,8 @@ section.portfolio {
 
             /* Landscape */
             @media screen and (orientation:landscape) {
-                width: 160vh;
-                height: 160vh;
+                width: 120vh;
+                height: 120vh;
                 left: 40%;
             }
 

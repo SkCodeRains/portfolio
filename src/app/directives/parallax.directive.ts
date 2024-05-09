@@ -155,6 +155,10 @@ export class ParallaxDirective implements AfterViewInit {
 
 
   private _enable: any = true;
+  windowRadiusX: any = 0;
+  windowRadiusY: any = 0;
+  windowCenterX: any = 0;
+  windowCenterY: any = 0;
   public get enable(): any {
     return this._enable;
   }
@@ -197,7 +201,7 @@ export class ParallaxDirective implements AfterViewInit {
     this.initialize();
   }
   initialize() {
-    if (window.innerHeight>window.innerWidth) return;
+    if (window.innerHeight > window.innerWidth) return;
     let style = window.getComputedStyle(this.element)
     if (style.getPropertyValue('position') === 'static') {
       this.element.style.position = 'relative';
@@ -210,6 +214,7 @@ export class ParallaxDirective implements AfterViewInit {
 
     // Setup
     this.updateLayers();
+    this.updateDimensions();
     this.enableFrames();
 
   }
@@ -229,8 +234,13 @@ export class ParallaxDirective implements AfterViewInit {
       let offsetY = clientY - rect.top;
 
       // Map offsetX and offsetY to range [-1, 1]
-      this.inputX = (offsetX / rect.width) * 2 - 1;
-      this.inputY = (offsetY / rect.height) * 2 - 1;
+      // this.inputX = (offsetX / rect.width) - 1;
+      // this.inputY = (offsetY / rect.height) - 1;
+
+      if (this.windowRadiusX && this.windowRadiusY) {
+        this.inputX = (clientX - this.windowCenterX) / this.windowRadiusX;
+        this.inputY = (clientY - this.windowCenterY) / this.windowRadiusY;
+      }
     }
   }
 
@@ -307,4 +317,10 @@ export class ParallaxDirective implements AfterViewInit {
     this.elementHeight = bounds.height;
   }
 
+  updateDimensions() {
+    this.windowCenterX = window.innerWidth * 0.5;
+    this.windowCenterY = window.innerHeight * 0.5;
+    this.windowRadiusX = Math.max(this.windowCenterX, window.innerWidth - this.windowCenterX)
+    this.windowRadiusY = Math.max(this.windowCenterY, window.innerWidth - this.windowCenterY)
+  }
 }

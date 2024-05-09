@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 
   folioService = inject(PortfolioService);
-  router = inject(Router);
 
   @ViewChild("links") ul!: ElementRef;
+
+  constructor(private router: Router) { }
 
   toggle(div: HTMLDivElement) {
     div.classList.contains('show') ? div.classList.remove('show') : div.classList.add('show');
@@ -27,11 +28,11 @@ export class NavbarComponent {
     element.classList.add("active");
     let page = element.querySelector("a")?.getAttribute("data");
     this.router.navigate([page], { skipLocationChange: true });
+    console.log(this.router);
+    
   }
 
   navigateTo(pageNumber: number) {
-    this.folioService.scrollAmount = pageNumber;
-    console.log(this.folioService);
-    
+    this.folioService.scrollAmount = -pageNumber;
   }
 }
