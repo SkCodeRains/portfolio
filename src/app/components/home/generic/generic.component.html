@@ -1,0 +1,34 @@
+@if (active) {
+<section id="home" class=" h-100 w-100 position-relative" [class.active]="active()">
+    <div class="introduction">
+        <div appSlideInOut direction="left" [inView]="active()"
+            class="text-section vw-100 vh-100 d-flex flex-column justify-content-center align-items-start  ">
+            <div class="name position-relative overflow-visible  ">
+                {{pageTitle}}
+            </div>
+            <br>
+            <div>
+                <div class="liners position-relative">
+                    <span class="bg-danger"></span>
+                    <span class="bg-danger"></span>
+                </div>
+                <div class="high-text text-justify pe-2">{{highText}}</div>
+
+            </div>
+            <button class="btn btn-danger show-more mt-2" appRipples (click)="navigateTo()" >
+                Explore More !
+            </button>
+        </div>
+    </div>
+    <div class="space vw-100 vh-100">
+        <div class="stars btn" appSlideInOut direction="right" [inView]="active()">
+            <div class="layer" data-depth="0.3">
+                <div class="image-cover" [class.active]="active()">
+                    <img [src]="imageSource" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+}

@@ -1,26 +1,37 @@
-<nav class="navbar position-sticky top-0 start-0 end-0 navbar-expand-lg  navbar-dark p-2">
+<nav
+    class="navbar position-sticky top-0 start-0 end-0 navbar-expand-lg navbar-dark position-relative  overflow-visible p-2">
     <span class="navbar-brand title px-3" href="#">
         Mohammed Shaikh
     </span>
-    <button class="navbar-toggler" type="button" (click)="toggle(collapse)">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" #collapse id="navbarSupportedContent">
-        <div class="flex-fill"></div>
-        <ul #links class="navbar-nav mr-auto me-5">
-            <li class="nav-item active" #navitem1 (click)="navigate(navitem1)">
+    <div class="nav-banner vw-100 vh-100 bg-danger position-absolute top-0 start-0" [class.show]="show">
+        <ul #links class="navbar-nav  h-100 flex-column text-uppercase  ">
+            <li class="nav-item active  m-auto " #navitem1 (click)="navigate(navitem1)">
                 <a class="nav-link btn" (click)="navigateTo(0)" data="home">Home</a>
             </li>
-            <li class="nav-item" #navitem2 (click)="navigate(navitem2)">
+            <li class="nav-item   m-auto" #navitem2 (click)="navigate(navitem2)">
                 <a class="nav-link btn" (click)="navigateTo(1)" data="about">About</a>
             </li>
-            <li class="nav-item" #navitem4 (click)="navigate(navitem4)">
+            <li class="nav-item   m-auto" #navitem4 (click)="navigate(navitem4)">
                 <a class="nav-link btn" (click)="navigateTo(2)" data="projects">Projects</a>
             </li>
-            <li class="nav-item" #navitem3 (click)="navigate(navitem3)">
+            <li class="nav-item   m-auto" #navitem3 (click)="navigate(navitem3)">
                 <a class="nav-link btn" (click)="navigateTo(3)" data=" ">Contact</a>
             </li>
         </ul>
     </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="flex-fill"></div>
+        <ul #links class="navbar-nav mr-auto me-5">
+            <li class="nav-item active">
+                <a class="nav-link btn px-3" target="_blank" href="https://github.com/SkCodeRains" data="home">GitHub <span class="bi bi-github"></span> </a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="navbar-toggler d-flex me-4" type="button" (click)="toggle()">
+        <span class="navbar-toggler-icon" [ngClass]="{'close':show}"></span>
+    </button>
+
+
 </nav>

@@ -116,11 +116,11 @@ section {
                     position: relative;
                     z-index: 300;
                     left: 10%;
-                    font-size: clamp(3rem, 5vw, 8vw);                    
-                    font-weight: 600;
+                    font-size: clamp(3rem, 4vw, 6vw);                    
+                    font-weight: 500;
 
                     @media screen and (orientation:portrait) {
-                        left: -10%;
+                        left: -5%;
                     }
                 }
             }

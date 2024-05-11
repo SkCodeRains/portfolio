@@ -1,12 +1,11 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { StarsComponent } from './components/stars/stars.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, StarsComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

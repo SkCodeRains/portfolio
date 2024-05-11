@@ -1,0 +1,142 @@
+@media screen and (orientation:landscape) {
+    .space {
+        .stars {
+            .layer {
+                .image-cover {
+                    width: 90%;
+                    height: 60%;
+                    overflow: hidden;
+                    border-radius: 10px;
+
+                    img {
+                        left: 0;
+                        width: auto !important;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .text-section {
+        height: 90vh !important;
+    }
+
+    .space {
+        .stars {
+            left: 0%;
+
+            .layer {
+
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+
+
+                img {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.space {
+    // z-index: 0;
+
+    .stars {
+        @media screen and (orientation:portrait) {
+            width: 100vw !important;
+            height: 100vw !important;
+            top: 0%;
+            left: 0%;
+        }
+
+        /* Landscape */
+        @media screen and (orientation:landscape) {
+            width: 110vh !important;
+            height: 110vh !important;
+            left: 45%;
+        }
+
+        .layer {
+
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+
+            .image-cover.active {
+                position: relative;
+                overflow: visible !important; 
+
+                &::after,
+                &::before {
+                    overflow: visible !important;
+                    content: "";
+                    height: 100%;
+                    background-color: #dc3545;
+                    position: absolute;
+                    top: 0 !important;
+
+                }
+
+                &::after {
+                    animation: fade-slice 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+                }
+
+                &::before {
+                    animation: fade-slice2 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s;
+                }
+
+                @keyframes fade-slice {
+                    0% {
+                        width: 20%;
+                        left: 0%;
+                    }
+
+                    50% {
+                        left: 10%;
+                        width: 50%;
+                    }
+
+
+                    100% {
+                        width: 0%;
+                        left: 100%;
+                    }
+
+
+                }
+
+                @keyframes fade-slice2 {
+
+                    0%,
+                    40% {
+                        width: 10%;
+                        left: 95%;
+                    }
+
+                    50% {
+                        left: 85%;
+                        width: 50%;
+                    }
+
+
+                    100% {
+                        width: 0%;
+                        left: 0%;
+                    }
+
+
+                }
+            }
+        }
+    }
+}

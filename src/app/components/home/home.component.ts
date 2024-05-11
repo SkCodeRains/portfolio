@@ -1,17 +1,18 @@
 import { Component, ViewChild, ElementRef, Input, inject, Inject } from "@angular/core";
-import { RainsScrollDirective } from "../../directives/rains-scroll.directive";
-import { GenericComponent } from "./about/about.component";
-import { PortfolioService } from "../../services/portfolio.service";
-import { ParallaxDirective } from "../../directives/parallax.directive";
+import { RainsScrollDirective } from "../../directives/rains-scroll.directive"; 
+import { PortfolioService } from "../../services/portfolio.service"; 
 import { NgbTooltipModule } from "@ng-bootstrap/ng-bootstrap";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { Router } from "@angular/router";
+import { StarsComponent } from "../stars/stars.component";
+import { GenericComponent } from "./generic/generic.component";
+import { Parallax2Directive } from "../../directives/parallax-2.directive";
 
 
 @Component({
   selector: '[#app-home]',
   standalone: true,
-  imports: [RainsScrollDirective, GenericComponent, ParallaxDirective, NgbTooltipModule, LandingPageComponent],
+  imports: [RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent,StarsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -34,7 +35,7 @@ export class HomeComponent {
     active: () => this.scrollAmount == -1,
     highText: `Passionate Full Stack Developer adept in both front-end and back-end development. Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
     pageTitle: "About Me",
-    imageSource: "./assets/images/about_me2.png"
+    imageSource: "./assets/images/aboutMe3.png"
   };
   /* 
   

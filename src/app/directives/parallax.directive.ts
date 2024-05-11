@@ -139,7 +139,7 @@ export class ParallaxDirective implements AfterViewInit {
   layers: Array<HTMLElement> = [];
   depthsX: any;
   depthsY: any;
-  invertX: boolean = true;
+  invertX: boolean = false;
   invertY: boolean = true;
   raf: any;
   element: any;
