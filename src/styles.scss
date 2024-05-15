@@ -68,6 +68,16 @@ body {
     }
 }
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    border-radius: 100% !important;
+    overflow: hidden;
+}
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -80,7 +90,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #dc3545;
+    background-color: #011321;
     /* color of the scroll thumb */
     border-radius: 20px;
+    // margin: 1rem;
+    // border: 10px solid white;
+}
+
+.main-bg {
+    background-color: $bg; //022236    
+    background-image: linear-gradient(to left, #dc3545, $bg);
 }

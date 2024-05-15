@@ -5,8 +5,8 @@
                 .image-cover {
                     width: 90%;
                     height: 60%;
-                    overflow: hidden;
-                    border-radius: 10px;
+                    overflow: hidden !important;
+                    border-radius: 1rem;
 
                     img {
                         left: 0;
@@ -38,7 +38,8 @@
 
 
                 img {
-                    width: 100%;
+                    width: 90vw;
+                    height: 60vw;
                     left: 0;
                 }
             }
@@ -73,12 +74,10 @@
             justify-content: center;
 
             .image-cover.active {
-                position: relative;
-                overflow: visible !important; 
+                position: relative; 
 
                 &::after,
-                &::before {
-                    overflow: visible !important;
+                &::before { 
                     content: "";
                     height: 100%;
                     background-color: #dc3545;

@@ -60,9 +60,9 @@ section.portfolio {
             margin-left: 8rem;
 
             .high-text {
-                width: clamp(40vw, 30rem, 90vw);
+                width: clamp(50vw, 30rem, 90vw);
                 text-align: justify;
-                font-size: clamp(2vw, 1.5rem, 5vw);
+                font-size: clamp(1.5vw, 1.5rem, 5vw);
             }
         }
 
@@ -73,6 +73,7 @@ section.portfolio {
             transition: all 0.1568s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 3rem;
             position: relative;
+            background: linear-gradient(to right bottom, #595ea5 25%, #ff3a4c 50%, #595ea5 100%);
 
             span {
                 position: absolute;
@@ -142,13 +143,13 @@ section.portfolio {
 
 
         .liners {
-            width: 6rem;
+            width: 10rem;
             overflow: visible !important;
 
             span {
                 overflow: visible !important;
                 display: block;
-                width: 5rem;
+                width: 8rem;
                 margin: 1rem;
                 height: 0.5rem;
                 border-radius: 3rem;
@@ -184,6 +185,15 @@ section.portfolio {
         .text-section {
             padding-top: 50%;
             margin-left: 2rem !important;
+        }
+    }
+
+    @media screen and (orientation:landscape) {
+        .text-section {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
         }
     }
 
@@ -234,7 +244,7 @@ section.portfolio {
 
                 img {
                     width: 100%;
-                    border-radius: 10px;
+                    border-radius: 1rem;
                     // box-sizing: border-box;
                 }
             }
@@ -249,50 +259,53 @@ section.portfolio {
 
 
 .side-nav {
+    left: 0;
+    position: absolute;
+    z-index: 100;
+
+
+    span {
+        padding: 1px;
+        background-color: white;
+        border-radius: 3rem;
+
+
+    }
 
     @media screen and (orientation:landscape) {
         width: 6rem;
+        margin-left: 0.5rem !important;
         height: 100vh;
-        position: absolute;
-        left: 0;
         top: 0;
-        z-index: 9999;
         flex-direction: column;
 
         span {
+            height: 5px;
             margin: 1rem 0;
             width: 3.5rem;
-            padding: 3px;
-            height: 5px;
-            background-color: white;
-            border-radius: 3rem;
 
             &.active {
                 width: 5rem;
             }
         }
-
     }
+
+
 
     @media screen and (orientation:portrait) {
         width: 100vw;
         height: 6rem;
-        position: absolute;
-        left: 0;
-        bottom: 2vh;
-        z-index: 9999;
+        bottom: 8vh;
+        justify-content: space-evenly !important;
 
         span {
-            margin: 0 1rem;
-            width: 3.5rem;
-            transform: rotateZ(90deg);
-            padding: 3px;
-            height: 5px;
-            background-color: white;
-            border-radius: 3rem;
+            // margin: 0 1rem;
+            height: 3.5rem;
+            width: 5px;
+            bottom: 0;
 
             &.active {
-                width: 5rem;
+                height: 5rem;
             }
         }
     }

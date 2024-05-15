@@ -31,7 +31,7 @@ export class RainsScrollDirective {
 
   constructor(private el: ElementRef) {
     this.mainContainer = el.nativeElement;
-    this.mainContainer.style.transition = 'all 1000ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s';
+    this.mainContainer.style.transition = 'all 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s';
     setTimeout(() => {
       this.maxScroll = (1 - this.mainContainer.children.length)
     }, 500);

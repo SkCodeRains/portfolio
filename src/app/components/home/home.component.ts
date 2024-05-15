@@ -35,7 +35,7 @@ export class HomeComponent {
     active: () => this.scrollAmount == -1,
     highText: `Passionate Full Stack Developer adept in both front-end and back-end development. Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
     pageTitle: "About Me",
-    imageSource: "./assets/images/aboutMe3.png"
+    imageSource: "./assets/images/AdobeStock_175632386-e1538970544824-1920x960.jpeg"
   };
   /* 
   

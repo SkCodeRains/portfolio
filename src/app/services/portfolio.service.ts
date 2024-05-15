@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PortfolioService {
 
-  private _scrollAmount: number = -1;
+  private _scrollAmount: number = 0;
   public get scrollAmount(): number {
     return this._scrollAmount;
   }
