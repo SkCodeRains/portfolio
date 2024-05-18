@@ -23,15 +23,50 @@
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
         [class.bg-active]="scrollAmount==-1">
-        <p question>
-            Is content projection cool?
-          </p>
-          <p>Let's learn about content projection!</p>
+
+        <ul #links class=" d-flex p-0 flex-wrap contact-icons mt-1 m-0">
+            @for (item of skills; track $index) {
+            <li class="nav-item contact-box me-1">
+                <div class="bi bi-angular h2 w-100 h-100" [ngbTooltip]="item.name">
+                    <img [src]="'./assets/icons/'+item.source" alt="">
+                </div>
+                <!-- {{item.name}} -->
+            </li>
+            }
+        </ul>
+
+
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig"
         [class.bg-active]="scrollAmount==-2">
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('contact')" [config]="contactConfig"
         [class.bg-active]="scrollAmount==-3">
+        <ul #links class=" d-flex p-0 flex-wrap me-5 contact-icons mt-2">
+            <li class="nav-item contact-box ">
+                <a class="nav-link btn" target="_blank" href="https://github.com/SkCodeRains" data="home">
+                    <div class="bi bi-github h2"></div>
+                    GitHub
+                </a>
+            </li>
+            <li class="nav-item  contact-box">
+                <a class="nav-link btn" target="_blank" href="https://www.linkedin.com/in/coderains/" data="home">
+                    <div class="bi bi-linkedin  h2 "></div>
+                    LinkedIn
+                </a>
+            </li>
+            <li class="nav-item  contact-box">
+                <a class="nav-link btn" target="_blank" href="mailto:skcoderains@gmail.com" data="home">
+                    <div class="bi bi-google h2  "></div>
+                    Gmail
+                </a>
+            </li>
+            <li class="nav-item  contact-box">
+                <a class="nav-link btn" target="_blank" href="tel:+917972914439" data="home">
+                    <div class="bi bi-phone h2  "></div>
+                    Call
+                </a>
+            </li>
+        </ul>
     </div>
 </section>

@@ -6,6 +6,7 @@
 
 $bg: #011321;
 $bg: #001c2d;
+$content-width: clamp(50vw, 30rem, 90vw);
 
 section.portfolio {
 
@@ -48,6 +49,26 @@ section.portfolio {
             }
         }
 
+        .contact-icons {
+            width: $content-width;
+
+            .contact-box {
+                cursor: pointer;
+                min-width: 4rem;
+                height: 4rem;
+                display: flex;
+                flex-direction: column;
+                .bi{
+                    margin: auto;
+                    padding-bottom: 0;
+                }
+                img{
+                    width: 4rem;
+                    height: 4rem;
+                    object-fit: scale-down;
+                }
+            }
+        }
     }
 
 
@@ -60,7 +81,7 @@ section.portfolio {
             margin-left: 8rem;
 
             .high-text {
-                width: clamp(50vw, 30rem, 90vw);
+                width: $content-width;
                 text-align: justify;
                 font-size: clamp(1.5vw, 1.5rem, 5vw);
             }
@@ -77,7 +98,7 @@ section.portfolio {
             background: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
 
             span {
-                position: absolute;  
+                position: absolute;
                 transform: translate(-50%, -50%);
                 border-radius: 50%;
                 animation: ripple 1s cubic-bezier(0.59, 1, 0.22, 1) 0s infinite;
@@ -109,7 +130,7 @@ section.portfolio {
                     left: -10%;
                     top: -20%;
                     box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.509);
-                    animation: flash 1.8s cubic-bezier(0,1,0.8,2.8) 0s forwards;
+                    animation: flash 1.8s cubic-bezier(0, 1, 0.8, 2.8) 0s forwards;
 
                     @keyframes flash {
                         from {

@@ -1,18 +1,18 @@
-import { Component, ViewChild, ElementRef, Input, inject, Inject } from "@angular/core";
-import { RainsScrollDirective } from "../../directives/rains-scroll.directive"; 
-import { PortfolioService } from "../../services/portfolio.service"; 
+import { Component, ViewChild, ElementRef, Input } from "@angular/core";
+import { RainsScrollDirective } from "../../directives/rains-scroll.directive";
 import { NgbTooltipModule } from "@ng-bootstrap/ng-bootstrap";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { Router } from "@angular/router";
 import { StarsComponent } from "../stars/stars.component";
 import { GenericComponent } from "./generic/generic.component";
 import { Parallax2Directive } from "../../directives/parallax-2.directive";
+import { PortfolioService } from "../../services/portfolio.service";
 
 
 @Component({
   selector: '[#app-home]',
   standalone: true,
-  imports: [RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent,StarsComponent],
+  imports: [RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -20,7 +20,7 @@ export class HomeComponent {
 
 
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLDivElement>;
-  folioService = inject(PortfolioService);
+  private _skills: any;
   public get scrollAmount(): number {
     return this.folioService.scrollAmount;
   }
@@ -29,11 +29,15 @@ export class HomeComponent {
     this.folioService.scrollAmount = value;
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private folioService: PortfolioService) {
+    this._skills = this.folioService.skills.filter((item: any, index: number) => {
+      return index >= 10 ? false : true;
+    });
+  }
 
   aboutConfig: any = {
     active: () => this.scrollAmount == -1,
-    highText: `Passionate Full Stack Developer adept in both front-end and back-end development. Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
+    highText: `Passionate Full Stack Developer adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
     pageTitle: "About Me",
     imageSource: "./assets/images/AdobeStock_175632386-e1538970544824-1920x960.jpeg"
   };
@@ -64,5 +68,8 @@ export class HomeComponent {
     this.router.navigate([page], {
       skipLocationChange: true
     })
+  }
+  get skills() {
+    return this._skills;
   }
 }

@@ -15,7 +15,8 @@
                 <div class="high-text text-justify pe-2 mt-3">{{highText}}</div>
 
             </div>
-            <button class="btn btn-dan ger show-more mt-4" appRipples (click)="navigateTo()" >
+            <ng-content ></ng-content>
+            <button class="btn btn-dan ger show-more mt-2" appRipples (click)="navigateTo()" >
                 Explore More !
             </button>
         </div>
