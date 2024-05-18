@@ -10,6 +10,10 @@
 $bg: #011321;
 $bg: #001c2d;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     line-height: var(--bs-body-line-height);

@@ -70,17 +70,18 @@ section.portfolio {
             padding: 0.5rem 3rem;
             border-radius: 3rem;
             font-weight: 700;
-            transition: all 0.1568s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.5568s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 3rem;
             position: relative;
-            background: linear-gradient(to right bottom, #595ea5 25%, #ff3a4c 50%, #595ea5 100%);
+            color: white;
+            background: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
 
             span {
-                position: absolute;
-                background-color: #ffffff4d;
+                position: absolute;  
                 transform: translate(-50%, -50%);
                 border-radius: 50%;
-                animation: ripple 1s cubic-bezier(0.19, 1, 0.22, 1) 0s infinite;
+                animation: ripple 1s cubic-bezier(0.59, 1, 0.22, 1) 0s infinite;
+                background-size: 200% auto;
 
                 @keyframes ripple {
                     0% {
@@ -107,8 +108,8 @@ section.portfolio {
                     transform: rotate(15deg);
                     left: -10%;
                     top: -20%;
-                    box-shadow: 0px 0px 10px 10px white;
-                    animation: flash 1s cubic-bezier(0.19, 1, 0.22, 1) 0s forwards;
+                    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.509);
+                    animation: flash 1.8s cubic-bezier(0,1,0.8,2.8) 0s forwards;
 
                     @keyframes flash {
                         from {

@@ -61,12 +61,11 @@ $bg: #001c2d;
 
     .nav-banner {
 
+        transition: all 358ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
         background-image: linear-gradient(to left, #dc3545, $bg);
         width: 0;
         height: 0;
-        // opacity: 0;
-        transition: all 358ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
         padding: 1rem;
         left: 0;
         font-family: "Ubuntu Sans mono", sans-serif;
@@ -89,6 +88,10 @@ $bg: #001c2d;
                 }
 
             }
+        }
+
+        &:not(.show) {
+            pointer-events: none;
         }
 
         &.show {

@@ -63,6 +63,15 @@ export class AboutMeFullComponent {
       source: "java.svg"
     },
     {
+      name: "HTML/CSS",
+      source: "html.svg"
+    },
+
+    {
+      name: "JavaScript",
+      source: "icons8-javascript.svg"
+    },
+    {
       name: "Docker",
       source: "icons8-docker.svg"
     }, {
@@ -88,16 +97,6 @@ export class AboutMeFullComponent {
       name: "SQL",
       source: "icons8-sql-48.png"
     },
-    {
-      name: "HTML/CSS",
-      source: "html.svg"
-    },
-
-    {
-      name: "JavaScript",
-      source: "icons8-javascript.svg"
-    },
-
     {
       name: "Jenkins",
       source: "icons8-jenkins.svg"

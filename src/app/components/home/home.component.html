@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<nav class="side-nav d-flex justify-content-center overflow-visible  ">
+<nav class="side-nav d-flex justify-content-center overflow-visible align-items-baseline  ">
     <span class="btn" ngbTooltip="Home" [class.active]="scrollAmount==0" (click)="scrollAmount=0"></span>
     <span class="btn" ngbTooltip="About" [class.active]="scrollAmount==-1" (click)="scrollAmount=-1"></span>
     <span class="btn" ngbTooltip="Projects" [class.active]="scrollAmount==-2" (click)="scrollAmount=-2"></span>
@@ -23,6 +23,10 @@
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
         [class.bg-active]="scrollAmount==-1">
+        <p question>
+            Is content projection cool?
+          </p>
+          <p>Let's learn about content projection!</p>
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig"
         [class.bg-active]="scrollAmount==-2">

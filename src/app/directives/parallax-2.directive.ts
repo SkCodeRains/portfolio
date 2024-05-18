@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, DestroyRef, Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/core';
 
 /**
 * Parallax.js
@@ -152,7 +152,7 @@ const MAGIC_NUMBER = 30,
   selector: '[appParallax2]',
   standalone: true
 })
-export class Parallax2Directive implements AfterViewInit {
+export class Parallax2Directive implements AfterViewInit, OnDestroy {
   private _active: boolean = false;
   public get active(): boolean {
     return this._active;
@@ -226,35 +226,33 @@ export class Parallax2Directive implements AfterViewInit {
   relativeInput: any;
   clipRelativeInput: any;
   @Input() options: any
-  element: any;
   supportDelay: number = 500;
   precision: number = 1;
   calibrationDelay: number = 500;
   constructor(private el: ElementRef,) {
     if (!this.inputElement) {
-      this.element = el.nativeElement;
-      this.inputElement = this.element;
+      this.inputElement = el.nativeElement;
     }
     const data: any = {
-      calibrateX: helpers.data(this.element, 'calibrate-x'),
-      calibrateY: helpers.data(this.element, 'calibrate-y'),
-      invertX: helpers.data(this.element, 'invert-x'),
-      invertY: helpers.data(this.element, 'invert-y'),
-      limitX: helpers.data(this.element, 'limit-x'),
-      limitY: helpers.data(this.element, 'limit-y'),
-      scalarX: helpers.data(this.element, 'scalar-x'),
-      scalarY: helpers.data(this.element, 'scalar-y'),
-      frictionX: helpers.data(this.element, 'friction-x'),
-      frictionY: helpers.data(this.element, 'friction-y'),
-      originX: helpers.data(this.element, 'origin-x'),
-      originY: helpers.data(this.element, 'origin-y'),
-      pointerEvents: helpers.data(this.element, 'pointer-events'),
-      precision: helpers.data(this.element, 'precision'),
-      relativeInput: helpers.data(this.element, 'relative-input'),
-      clipRelativeInput: helpers.data(this.element, 'clip-relative-input'),
-      hoverOnly: helpers.data(this.element, 'hover-only'),
-      inputElement: document.querySelector(helpers.data(this.element, 'input-element')),
-      selector: helpers.data(this.element, 'selector')
+      calibrateX: helpers.data(this.inputElement, 'calibrate-x'),
+      calibrateY: helpers.data(this.inputElement, 'calibrate-y'),
+      invertX: helpers.data(this.inputElement, 'invert-x'),
+      invertY: helpers.data(this.inputElement, 'invert-y'),
+      limitX: helpers.data(this.inputElement, 'limit-x'),
+      limitY: helpers.data(this.inputElement, 'limit-y'),
+      scalarX: helpers.data(this.inputElement, 'scalar-x'),
+      scalarY: helpers.data(this.inputElement, 'scalar-y'),
+      frictionX: helpers.data(this.inputElement, 'friction-x'),
+      frictionY: helpers.data(this.inputElement, 'friction-y'),
+      originX: helpers.data(this.inputElement, 'origin-x'),
+      originY: helpers.data(this.inputElement, 'origin-y'),
+      pointerEvents: helpers.data(this.inputElement, 'pointer-events'),
+      precision: helpers.data(this.inputElement, 'precision'),
+      relativeInput: helpers.data(this.inputElement, 'relative-input'),
+      clipRelativeInput: helpers.data(this.inputElement, 'clip-relative-input'),
+      hoverOnly: helpers.data(this.inputElement, 'hover-only'),
+      inputElement: document.querySelector(helpers.data(this.inputElement, 'input-element')),
+      selector: helpers.data(this.inputElement, 'selector')
     }
 
     let ref: any = this;
@@ -321,6 +319,9 @@ export class Parallax2Directive implements AfterViewInit {
   ngAfterViewInit(): void {
     this.Initialize();
   }
+  ngOnDestroy(): void {
+    this.disable();
+  }
   Initialize() {
     if (this.transform2DSupport === undefined) {
       this.transform2DSupport = helpers.transformSupport('2D')
@@ -329,17 +330,17 @@ export class Parallax2Directive implements AfterViewInit {
 
     // Configure Context Styles
     if (this.transform3DSupport) {
-      helpers.accelerate(this.element)
+      helpers.accelerate(this.inputElement)
     }
 
-    let style = window.getComputedStyle(this.element)
+    let style = window.getComputedStyle(this.inputElement)
     if (style.getPropertyValue('position') === 'static') {
-      this.element.style.position = 'relative'
+      this.inputElement.style.position = 'relative'
     }
 
     // Pointer events
     if (!this.pointerEvents) {
-      this.element.style.pointerEvents = 'none'
+      this.inputElement.style.pointerEvents = 'none'
     }
 
     // Setup
@@ -357,9 +358,9 @@ export class Parallax2Directive implements AfterViewInit {
 
   updateLayers() {
     if (this.selector) {
-      this.layers = this.element.querySelectorAll(this.selector)
+      this.layers = this.inputElement.querySelectorAll(this.selector)
     } else {
-      this.layers = this.element.children
+      this.layers = this.inputElement.children
     }
 
     if (!this.layers.length) {
@@ -421,21 +422,21 @@ export class Parallax2Directive implements AfterViewInit {
 
     if (this.orientationSupport) {
       this.portrait = false
-      window.addEventListener('deviceorientation', this.onDeviceOrientation.bind(this))
+      // window.addEventListener('deviceorientation', this.onDeviceOrientation.bind(this))
       this.detectionTimer = setTimeout(this.onOrientationTimer.bind(this), this.supportDelay)
     } else if (this.motionSupport) {
       this.portrait = false
-      window.addEventListener('devicemotion', this.onDeviceMotion.bind(this))
+      // window.addEventListener('devicemotion', this.onDeviceMotion.bind(this))
       this.detectionTimer = setTimeout(this.onMotionTimer.bind(this), this.supportDelay)
     } else {
       this.calibrationX = 0
       this.calibrationY = 0
       this.portrait = false
-      window.addEventListener('mousemove', this.onMouseMove.bind(this))
+      // window.addEventListener('mousemove', this.onMouseMove.bind(this))
       this.doReadyCallback()
     }
 
-    window.addEventListener('resize', this.onWindowResize.bind(this))
+    // window.addEventListener('resize', this.onWindowResize.bind(this))
     this.raf = requestAnimationFrame(this.onAnimationFrame.bind(this))
   }
   disable() {
@@ -443,17 +444,6 @@ export class Parallax2Directive implements AfterViewInit {
       return
     }
     this.enabled = false
-
-    if (this.orientationSupport) {
-      window.removeEventListener('deviceorientation', this.onDeviceOrientation.bind(this))
-    } else if (this.motionSupport) {
-      window.removeEventListener('devicemotion', this.onDeviceMotion.bind(this))
-    } else {
-      window.removeEventListener('mousemove', this.onMouseMove.bind(this))
-    }
-
-    window.removeEventListener('resize', this.onWindowResize.bind(this))
-
   }
 
   calibrate(x: number, y: number) {
@@ -528,6 +518,7 @@ export class Parallax2Directive implements AfterViewInit {
     this.calibrationFlag = true
   }
 
+  @HostListener("document:resize")
   onWindowResize() {
     this.updateDimensions()
   }
@@ -589,7 +580,7 @@ export class Parallax2Directive implements AfterViewInit {
     this.inputX = x
     this.inputY = y
   }
-
+  @HostListener("document:deviceorientation")
   onDeviceOrientation(event: any) {
     let beta = event.beta
     let gamma = event.gamma
@@ -599,6 +590,7 @@ export class Parallax2Directive implements AfterViewInit {
     }
   }
 
+  @HostListener("document:devicemotion")
   onDeviceMotion(event: any) {
     let beta = event.rotationRate.beta
     let gamma = event.rotationRate.gamma
@@ -608,6 +600,7 @@ export class Parallax2Directive implements AfterViewInit {
     }
   }
 
+  @HostListener("document:mousemove", ["$event"])
   onMouseMove(event: any) {
     if (!this.enabled) return;
     let clientX = event.clientX,
@@ -642,22 +635,7 @@ export class Parallax2Directive implements AfterViewInit {
         this.inputY = (clientY - this.windowCenterY) / this.windowRadiusY
       }
     }
-  }
-
-  destroy() {
-    this.disable()
-
-    clearTimeout(this.calibrationTimer)
-    clearTimeout(this.detectionTimer)
-
-    this.element.removeAttribute('style')
-    for (let index = 0; index < this.layers.length; index++) {
-      this.layers[index].removeAttribute('style')
-    }
-
-    delete this.element
-    delete this.layers
-  }
+  } 
 
   version() {
     return '4.1.0'

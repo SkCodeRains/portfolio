@@ -5,7 +5,7 @@
 .section {
 z-index: -99999;
     .star {
-        position: absolute;
+        position: absolute; 
         // top: 50%;
         // left: 50%;
         width: 4px;
@@ -14,13 +14,13 @@ z-index: -99999;
         border-radius: 50%;
         box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
         overflow: visible !important;
-        animation: ride 3s cubic-bezier(0.55, 0.445, 0.395, 0.05) 0s;
+        animation: ride 3s cubic-bezier(0.55, 0.445, 0.395, 0.05) 0s ;
         opacity: 0;
 
         &::after {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 45%;
             width: 200px;
             height: 1px;
             background: linear-gradient(90deg, #fff, transparent);

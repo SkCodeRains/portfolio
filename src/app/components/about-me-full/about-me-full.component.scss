@@ -8,6 +8,10 @@ section {
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
     scroll-behavior: smooth;
 
+    .back-btn {
+        z-index: 9999;
+    }
+
     .btn-icon {
         border: none !important;
 
@@ -78,25 +82,9 @@ section {
             header {
                 margin-top: 2rem;
                 font-size: clamp(3rem, 5vw, 8vw);
-
-            }
-
-
-
-            .skill {
-                max-width: 30rem;
-
-                .bar {
-                    .progress {
-                        ngb-progressbar {
-                            width: 100%;
-                        }
-                    }
-                }
             }
 
             .card {
-
                 box-shadow: 5px 5px 15px 0px #e2e8ec, inset 5px 5px 15px 0px #e2e8ec, inset -5px -5px 15px 0px #ffffff, -5px -5px 15px 0px #ffffff;
                 width: 10rem;
                 height: 10rem;
@@ -107,8 +95,21 @@ section {
                 }
 
                 @media screen and (orientation:portrait) {
-                    
-                    
+                    width: 7rem;
+                    height: 7rem;
+
+                    .card-header {
+                        font-size: 12px;
+                    }
+
+                    .card-body {
+                        padding: 0;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
                 }
             }
 
@@ -152,19 +153,36 @@ section {
 }
 
 @media screen and (orientation:portrait) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 10px;
+    }
+
     section {
+
+
         .main {
             height: 92dvh;
+            padding: 0 !important;
+            margin: 0 !important;
+
+
+
 
             .welcome {
                 position: relative;
                 justify-content: center;
+                width: 100%;
 
                 .image {
                     order: 0;
                     margin: 0 auto;
                     height: 100%;
-                    width: 90%;
+                    width: 100%;
+
+                    * {
+                        border-radius: 0% !important;
+                    }
 
                     .img {
                         img {
@@ -177,8 +195,13 @@ section {
                     position: absolute;
                     order: 1;
                     width: 100% !important;
-                    top: 20%;
+                    bottom: 0%;
                     z-index: 1;
+
+                    &,
+                    * {
+                        padding-bottom: 0 !important;
+                    }
                 }
             }
 
