@@ -1,131 +1,79 @@
-section {
-    // &:not(.active) {
-    //     .introduction {
-    //         .text-section {
-    //             transform: translate(-100%);
-    //             transition: transform 1.1568s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    //         }
-    //     }
+.stars {
 
-    //     .space {
-    //         transform: translate(200%);
-    //         transition: transform 1.1568s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    //     }
-    // }
+    .layer {
+        img {
+            margin: 30%;
+            width: 40%;
 
-    // &.active {
+            &[show-at|="1"] {
+                z-index: 100;
+            }
 
-    //     .text-section,
-    //     .space {
-    //         transition: transform 1.1568s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    //         transform: translate(0);
-    //     }
-    // }
+            &[show-at|="2"] {
+                z-index: 200;
+            }
 
-    // @keyframes left-slide {
-    //     from {
-    //         transform: translate(-100%);
-    //     }
+            &[show-at|="3"] {
+                z-index: 300;
+            }
+        }
 
-    //     to {
-    //         transform: translate(0);
-    //     }
-    // }
-
-    // @keyframes right-slide {
-    //     from {
-    //         transform: translate(200%);
-    //     }
-
-    //     to {
-    //         transform: translate(0);
-    //     }
-    // }
-
-
-}
-
-.space {
-
-    .stars {
-
-        .layer {
+        &:nth-child(1) {
             img {
-                margin: 30%;
-                width: 40%;
-
-                &[show-at|="1"] {
-                    z-index: 100;
-                }
-
-                &[show-at|="2"] {
-                    z-index: 200;
-                }
-
-                &[show-at|="3"] {
-                    z-index: 300;
-                }
+                transform: translate(50%, -70%);
+                filter: grayscale(100%);
             }
+        }
 
-            &:nth-child(1) {
-                img {
-                    transform: translate(50%, -70%);
-                    filter: grayscale(100%);
-                }
+        &:nth-child(2) {
+            img {
+                transform: translate(-70%, -20%);
+                filter: grayscale(1000%);
             }
+        }
 
-            &:nth-child(2) {
-                img {
-                    transform: translate(-70%, -20%);
-                    filter: grayscale(1000%);
-                }
+        &:nth-child(3) {
+            img {
+                border-radius: 100%;
+                filter: saturate(0.5);
+                // box-shadow: 0px 0px 0px 10px white, inset 0px 0px 100px 10px rgb(250, 0, 0), 0px 0px 100px 10px white;
             }
+        }
 
-            &:nth-child(3) {
-                img {
-                    border-radius: 100%;
-                    filter: saturate(0.5);
-                    // box-shadow: 0px 0px 0px 10px white, inset 0px 0px 100px 10px rgb(250, 0, 0), 0px 0px 100px 10px white;
-                }
+        &:nth-child(4) {
+            img {
+                transform: translate(-70%, 130%);
             }
+        }
 
-            &:nth-child(4) {
-                img {
-                    transform: translate(-70%, 130%);
-                }
+
+        &:nth-child(5) {
+            img {
+                transform: translate(40%, 160%);
             }
+        }
 
 
-            &:nth-child(5) {
-                img {
-                    transform: translate(40%, 160%);
-                }
+        &:nth-child(6) {
+            img {
+                transform: translate(80%, 45%);
             }
+        }
 
+        &:nth-child(7) {
+            z-index: 400;
 
-            &:nth-child(6) {
-                img {
-                    transform: translate(80%, 45%);
-                }
-            }
+            div {
+                position: relative;
+                z-index: 300;
+                left: 10%;
+                font-size: clamp(3rem, 4vw, 6vw);
+                font-weight: 500;
 
-            &:nth-child(7) {
-                z-index: 400;
-
-                div {
-                    position: relative;
-                    z-index: 300;
-                    left: 10%;
-                    font-size: clamp(3rem, 4vw, 6vw);                    
-                    font-weight: 500;
-
-                    @media screen and (orientation:portrait) {
-                        left: -5%;
-                    }
+                @media screen and (orientation:portrait) {
+                    left: -5%;
                 }
             }
         }
     }
 }
-
- 

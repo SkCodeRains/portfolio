@@ -1,10 +1,10 @@
 <section id="about-me " class="position-relative vw-100 overflow-x-hidden  ">
-    <button class="btn back-btn  abs btn-icon position-absolute top-0" (click)="goto()">
-        <span class="bi h1 text-black bi-arrow-left"> </span>
+    <button class="btn back-btn  abs btn-icon position-fixed top-0 bg-danger circle m-2 mt-5" (click)="goto()">
+        <span class="bi h1 text-white bi-arrow-left"> </span>
     </button>
 
     <div class="main container-fluid px-4 py-5 ">
-        @if (true) {
+        @if (false) {
         <div class="welcome h-100 w-100 d-flex align-items-center d- none">
             <div class="about p-4 ">
                 <div class="w-100 p-3 m-auto">
@@ -23,6 +23,23 @@
             </div>
         </div>
 
+        <div class="about-me responsive-width mt-5 flex-wrap  d-non e justify-content-start gap-3 d-xxl-flex d-none ">
+
+            @for (detail of details; track $index) {
+            <div class="card">
+                <div class="card-header">
+                    {{detail.title}}
+                </div>
+                <div class="card-body">
+                    <div class="details">{{detail.info}} </div>
+                </div>
+
+            </div>
+            }
+        </div>
+
+
+        }
 
         <div class="about-me1 text-black mt-5 d-xxl-none">
             @for (detail of details; track $index) {
@@ -38,25 +55,8 @@
             }
         </div>
 
-        <div class="about-me mt-5 flex-wrap  d-non e justify-content-start gap-3 d-xxl-flex d-none ">
 
-            @for (detail of details; track $index) {
-            <div class="card">
-                <div class="card-header">
-                    {{detail.title}}
-                </div>
-                <div class="card-body">
-                    <div class="details">{{detail.info}} </div>
-                </div>
-
-            </div>
-            }
-        </div>
-        }
-
-
-
-        <div class="skills w-100 text-black text-capitalize">
+        <div class="skills responsive-width text-black text-capitalize">
 
             <header>
                 Skills Set

@@ -14,19 +14,19 @@
     <span class="btn" ngbTooltip="Home" [class.active]="scrollAmount==0" (click)="scrollAmount=0"></span>
     <span class="btn" ngbTooltip="About" [class.active]="scrollAmount==-1" (click)="scrollAmount=-1"></span>
     <span class="btn" ngbTooltip="Projects" [class.active]="scrollAmount==-2" (click)="scrollAmount=-2"></span>
-    <span class="btn" ngbTooltip="Contact Me" [class.active]="scrollAmount==-3" (click)="scrollAmount=-3"></span>
 </nav>
 
 <section #portfolio appRainsScroll [(scrollAmount)]="scrollAmount"
     class="portfolio portfolio-container position-absolute top-0">
-    <div class="full-width-div" id="app-landing-page" [active]="scrollAmount==0" [class.bg-active]="scrollAmount==0">
-    </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
-        [class.bg-active]="scrollAmount==-1">
+        [class.bg-active]="scrollAmount==0" [defaultPanel]="false">
 
-        <ul #links class=" d-flex p-0 flex-wrap contact-icons mt-1 m-0">
+        <div class="space vw-100 vh-100 " id="app-landing-page" custumPanel [class.bg-active]="scrollAmount==0"
+            [active]="scrollAmount==0"></div>
+
+        <ul #links class=" d-flex p-0 flex-wrap content-icons mt-1 m-0" contents>
             @for (item of skills; track $index) {
-            <li class="nav-item contact-box me-1">
+            <li class="nav-item content-box me-1">
                 <div class="bi bi-angular h2 w-100 h-100" [ngbTooltip]="item.name">
                     <img [src]="'./assets/icons/'+item.source" alt="">
                 </div>
@@ -34,39 +34,65 @@
             </li>
             }
         </ul>
-
-
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig"
-        [class.bg-active]="scrollAmount==-2">
+        [class.bg-active]="scrollAmount==-1">
+        <ul #links class=" d-flex p-0 flex-wrap me-5 shapes content-icons mt-2 m-0" contents>
+
+            <li class="nav-item content-box bi bi-square ">
+            </li>
+            <li class="nav-item content-box bi bi-circle ">
+            </li>
+            <li class="nav-item content-box bi bi-heptagon-half ">
+            </li>
+            <li class="nav-item content-box bi bi-diamond ">
+            </li>
+            <li class="nav-item content-box bi bi-gem ">
+            </li>
+            <li class="nav-item content-box bi bi-triangle-fill ">
+            </li>
+            <li class="nav-item content-box bi bi-pentagon-half ">
+            </li>
+            <li class="nav-item content-box bi bi-octagon-fill ">
+            </li>
+            <li class="nav-item content-box bi bi-heart-half ">
+            </li>
+        </ul>
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('contact')" [config]="contactConfig"
-        [class.bg-active]="scrollAmount==-3">
-        <ul #links class=" d-flex p-0 flex-wrap me-5 contact-icons mt-2">
-            <li class="nav-item contact-box ">
+        [class.bg-active]="scrollAmount==-2">
+        <ul #links class=" d-flex p-0 flex-wrap me-5 content-icons mt-2" contents>
+            <li class="nav-item content-box ">
                 <a class="nav-link btn" target="_blank" href="https://github.com/SkCodeRains" data="home">
                     <div class="bi bi-github h2"></div>
                     GitHub
                 </a>
             </li>
-            <li class="nav-item  contact-box">
+            <li class="nav-item  content-box">
                 <a class="nav-link btn" target="_blank" href="https://www.linkedin.com/in/coderains/" data="home">
                     <div class="bi bi-linkedin  h2 "></div>
                     LinkedIn
                 </a>
             </li>
-            <li class="nav-item  contact-box">
+            <li class="nav-item  content-box">
                 <a class="nav-link btn" target="_blank" href="mailto:skcoderains@gmail.com" data="home">
                     <div class="bi bi-google h2  "></div>
                     Gmail
                 </a>
             </li>
-            <li class="nav-item  contact-box">
+            <li class="nav-item  content-box">
                 <a class="nav-link btn" target="_blank" href="tel:+917972914439" data="home">
                     <div class="bi bi-phone h2  "></div>
                     Call
                 </a>
             </li>
+            <li class="nav-item  content-box">
+                <a class="nav-link btn" target="_blank" href="tel:+917972914439" data="home">
+                    <div class="bi bi-file-person-fill h2  "></div>
+                    Resume
+                </a>
+            </li>
         </ul>
+
     </div>
 </section>

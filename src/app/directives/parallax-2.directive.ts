@@ -518,7 +518,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     this.calibrationFlag = true
   }
 
-  @HostListener("document:resize")
+  @HostListener("window:resize")
   onWindowResize() {
     this.updateDimensions()
   }
@@ -580,7 +580,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     this.inputX = x
     this.inputY = y
   }
-  @HostListener("document:deviceorientation")
+  @HostListener("window:deviceorientation")
   onDeviceOrientation(event: any) {
     let beta = event.beta
     let gamma = event.gamma
@@ -590,7 +590,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     }
   }
 
-  @HostListener("document:devicemotion")
+  @HostListener("window:devicemotion")
   onDeviceMotion(event: any) {
     let beta = event.rotationRate.beta
     let gamma = event.rotationRate.gamma
@@ -600,7 +600,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     }
   }
 
-  @HostListener("document:mousemove", ["$event"])
+  @HostListener("window:mousemove", ["$event"])
   onMouseMove(event: any) {
     if (!this.enabled) return;
     let clientX = event.clientX,
@@ -635,7 +635,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
         this.inputY = (clientY - this.windowCenterY) / this.windowRadiusY
       }
     }
-  } 
+  }
 
   version() {
     return '4.1.0'

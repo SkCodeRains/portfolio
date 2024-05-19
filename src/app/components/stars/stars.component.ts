@@ -30,19 +30,34 @@ export class StarsComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     let interval = setInterval(() => {
       this.destroyed === true ? clearInterval(interval) : this.animationFrame();
-    }, 500);
+    }, 1000);
   }
   animationFrame() {
     let delay = (this.getRandomDelay(1, 100) * 10);
     let pos = this.getRandomPosition(20, 200);
     let div = document.createElement("div");
+    let index = this.getRandomPosition(-1, 1);
+    let scale = "0";
+    switch (index) {
+      case -1:
+        scale = "0.5";
+        break;
+      case 0:
+        scale = "1";
+        break;
+      case 1:
+        scale = "2";
+        break;
+    }
     div.classList.add("star");
     div.style.left = pos + "%";
     div.style.animationDelay = delay + 'ms';
+    div.style.zIndex = index.toString();
+    div.style.scale = scale;
     this.galaxy.appendChild(div);
     setTimeout(() => {
       div.remove();
-    }, 5000 + delay);
+    }, 3500 + delay);
   }
 
 
@@ -51,14 +66,14 @@ export class StarsComponent implements AfterViewInit, OnDestroy {
 
   getRandomDelay(min: number, max: number) {
     let random = 0;
-    random = Math.floor(Math.random() * (max - min + 1)) + min; 
+    random = Math.floor(Math.random() * (max - min + 1)) + min;
     return random;
   }
 
 
   getRandomPosition(min: number, max: number): number {
     let random = 0;
-    random = Math.floor(Math.random() * (max - min + 1)) + min; 
+    random = Math.floor(Math.random() * (max - min + 1)) + min;
     return random;
   }
 

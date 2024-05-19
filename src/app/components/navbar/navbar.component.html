@@ -1,27 +1,33 @@
-<nav class="navbar position-sticky top-0 start-0 vw-100 navbar-expand-lg overflow-visible navbar-dark position-relative p-2">
+<nav
+    class="navbar position-sticky top-0 start-0 vw-100 navbar-expand-lg overflow-visible navbar-dark position-relative p-2">
     <span class="navbar-brand title px-3" href="#">
         Mohammed Shaikh
     </span>
 
     <div class="nav-banner  position-absolute overflow-hidden top-0 start-0" [class.show]="show">
         <ul #links class="navbar-nav  h-100 flex-column text-uppercase  ">
-            <li class="nav-item  m-auto " #navitem1 (click)="navigate(navitem1)">
+            <li class="nav-item  m-auto " #navitem1 (click)="navigate(navitem1)" [class.active]="currentPage=='home'">
                 <a class="nav-link btn" (click)="navigateTo(0)" data="home">Home</a>
             </li>
-            <li class="nav-item   m-auto" #navitem2 (click)="navigate(navitem2)">
-                <a class="nav-link btn" (click)="navigateTo(1)" data="about">About</a>
+
+            <li class="nav-item  m-auto " #navitem2 (click)="navigate(navitem2)" [class.active]="currentPage=='about'">
+                <a class="nav-link btn" (click)="navigateTo(0)" data="about">About
+                    Me</a>
             </li>
-            <li class="nav-item   m-auto" #navitem4 (click)="navigate(navitem4)">
-                <a class="nav-link btn" (click)="navigateTo(2)" data="projects">Projects</a>
+            <li class="nav-item   m-auto" #navitem4 (click)="navigate(navitem4)"
+                [class.active]="currentPage=='projects'">
+                <a class="nav-link btn" (click)="navigateTo(1)" data="projects">Projects</a>
             </li>
-            <li class="nav-item   m-auto" #navitem3 (click)="navigate(navitem3)">
-                <a class="nav-link btn" (click)="navigateTo(3)" data="contact">Contact</a>
+            <li class="nav-item   m-auto" #navitem3 (click)="navigate(navitem3)"
+                [class.active]="currentPage=='contact'">
+                <a class="nav-link btn" (click)="navigateTo(2)" data="contact">Contact</a>
             </li>
         </ul>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="flex-fill"></div>
         <ul #links class="navbar-nav mr-auto me-5">
+            current Page : {{currentPage}}
             <li class="nav-item  mx-3">
                 <a class="nav-link btn px-3" target="_blank" href="https://github.com/SkCodeRains" data="home">GitHub
                     <span class="bi bi-github ms-2 "></span> </a>
@@ -31,12 +37,12 @@
                     data="home">LinkedIN<span class="bi bi-linkedin ms-2 "></span> </a>
             </li>
             <li class="nav-item  mx-3">
-                <a class="nav-link btn px-3" target="_blank" href="mailto:skcoderains@gmail.com"
-                    data="home">Gmail<span class="bi bi-google ms-2 "></span> </a>
+                <a class="nav-link btn px-3" target="_blank" href="mailto:skcoderains@gmail.com" data="home">Gmail<span
+                        class="bi bi-google ms-2 "></span> </a>
             </li>
             <li class="nav-item  mx-3">
-                <a class="nav-link btn px-3" target="_blank" href="tel:+917972914439"
-                    data="home">Call 7972914439<span class="bi bi-phone ms-2 "></span> </a>
+                <a class="nav-link btn px-3" target="_blank" href="tel:+917972914439" data="home">Call 7972914439<span
+                        class="bi bi-phone ms-2 "></span> </a>
             </li>
         </ul>
     </div>

@@ -10,10 +10,17 @@ section {
 
     .back-btn {
         z-index: 9999;
+        width: 3rem;
+        height: 3rem;
+
+        .bi {
+            font-size: 2rem;
+        }
+
+        border: 1px solid #ffffff !important;
     }
 
     .btn-icon {
-        border: none !important;
 
         &:active {
             scale: 0.8;
@@ -211,6 +218,10 @@ section {
 }
 
 @media screen and (orientation:landscape) {
+    .responsive-width {
+        width: clamp(65vw, 100%, 80vw) !important;
+    }
+
     section {
         .main {
             height: 92dvh;

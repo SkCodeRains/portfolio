@@ -23,18 +23,21 @@ export class NavbarComponent {
     this.show = !this.show;
   }
   navigate(element: HTMLLIElement) {
-    let links = ((this.ul.nativeElement as HTMLUListElement).querySelectorAll(".nav-item") as any);
-    for (const link of links) {
-      link.classList.remove("active");
-    }
-    element.classList.add("active");
+    // let links = ((this.ul.nativeElement as HTMLUListElement).querySelectorAll(".nav-item") as any);
+    // for (const link of links) {
+    //   link.classList.remove("active");
+    // }
+    // element.classList.add("active");
     let page = element.querySelector("a")?.getAttribute("data");
-    this.toggle();
+    this.toggle(); 
     this.router.navigate([page], { skipLocationChange: true });
-
   }
 
   navigateTo(pageNumber: number) {
     this.folioService.scrollAmount = -pageNumber;
+  }
+
+  get currentPage(): string {
+    return this.router.url.toString().slice(1, this.router.url.length);
   }
 }

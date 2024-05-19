@@ -7,12 +7,13 @@ import { StarsComponent } from "../stars/stars.component";
 import { GenericComponent } from "./generic/generic.component";
 import { Parallax2Directive } from "../../directives/parallax-2.directive";
 import { PortfolioService } from "../../services/portfolio.service";
+import { CommonModule } from "@angular/common";
 
 
 @Component({
   selector: '[#app-home]',
   standalone: true,
-  imports: [RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
+  imports: [CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -36,9 +37,9 @@ export class HomeComponent {
   }
 
   aboutConfig: any = {
-    active: () => this.scrollAmount == -1,
-    highText: `Passionate Full Stack Developer adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
-    pageTitle: "About Me",
+    active: () => this.scrollAmount == 0,
+    highText: `Passionate Full Stack Developer 2+ years of experience adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
+    pageTitle: "Mohammed <br> Shaikh",
     imageSource: "./assets/images/AdobeStock_175632386-e1538970544824-1920x960.jpeg"
   };
   /* 
@@ -50,7 +51,7 @@ export class HomeComponent {
   
   */
   projectsConfig: any = {
-    active: () => this.scrollAmount == -2,
+    active: () => this.scrollAmount == -1,
     highText: `Explore my world of projects! Each one tells a unique story of passion and creativity. Dive in and witness the magic.`,
     pageTitle: "Projects",
     imageSource: "./assets/images/projects.jpeg"
@@ -58,7 +59,7 @@ export class HomeComponent {
 
 
   contactConfig: any = {
-    active: () => this.scrollAmount == -3,
+    active: () => this.scrollAmount == -2,
     highText: "Let's connect! Whether it's a question or a project idea, I'm all ears. Reach out below or find me on social media.",
     pageTitle: "Contact Me",
     imageSource: "./assets/images/interaction-design-and-technologies_282333076.jpeg"
