@@ -591,7 +591,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
   }
 
   @HostListener("window:devicemotion")
-  onDeviceMotion(event: any) {
+  onDeviceMotion(event: any) { 
     let beta = event.rotationRate.beta
     let gamma = event.rotationRate.gamma
     if (beta !== null && gamma !== null) {
