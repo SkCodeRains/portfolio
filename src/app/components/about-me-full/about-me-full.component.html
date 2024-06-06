@@ -1,11 +1,9 @@
 <section id="about-me " class="position-relative vw-100 overflow-x-hidden  ">
-    <button class="btn back-btn  abs btn-icon position-fixed top-0 bg-danger circle m-2 mt-5" (click)="goto()">
-        <span class="bi h1 text-white bi-arrow-left"> </span>
-    </button>
 
-    <div class="main container-fluid px-4 py-5 ">
-        @if (true) {
-        <div class="welcome h-100 w-100 d-flex align-items-center d- none">
+
+    <div class="main container-fluid px-4 py-5 ps-3 ">
+
+        <div class="welcome h-100 w-100 d-flex align-items-center ">
             <div class="about p-4 ">
                 <div class="w-100 p-3 m-auto">
                     <h1 class="fw-bold">Welcome !!</h1>
@@ -23,29 +21,28 @@
             </div>
         </div>
 
-        <div class="about-me responsive-width mt-5 flex-wrap  d-non e justify-content-start gap-3 d-xxl-flex d-none ">
+        <div class="about-me  responsive-width mt-5 d-xxl-flex d-none ">
 
-            @for (detail of details; track $index) {
-            <div class="card">
-                <div class="card-header">
-                    {{detail.title}}
-                </div>
-                <div class="card-body">
-                    <div class="details">{{detail.info}} </div>
-                </div>
+            <div class=" max-width15 m-auto d-flex  gap-3  flex-wrap justify-content-start">
+                @for (detail of details; track $index) {
+                <div class="card">
+                    <div class="card-header">
+                        {{detail.title}}
+                    </div>
+                    <div class="card-body">
+                        <div class="details">{{detail.info}} </div>
+                    </div>
 
+                </div>
+                }
             </div>
-            }
         </div>
-
-
-        }
 
         <div class="about-me1 text-black mt-5 d-xxl-none">
             @for (detail of details; track $index) {
             <div class="flex-wrap d-flex justify-content-lg-around gap-3">
                 <div class="header">
-                    <span class="bi text-danger bi-arrow-right h4"> {{detail.title}}</span>
+                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
                 </div>
                 <div class="details me-5">
                     {{detail.info}}
@@ -56,13 +53,14 @@
         </div>
 
 
-        <div class="skills responsive-width text-black text-capitalize">
+        <div class="skills responsive-width text-black text-capitalize h-100">
 
-            <header>
+            <header class="ms-3">
                 Skills Set
             </header>
 
-            <div class="d-flex flex-wrap h-100 w-100 justify-content-center  gap-2 ">
+            <div
+                class="skill-container max-width15 m-auto d-flex flex-wrap h-100 w-100 justify-content-center  gap-2 px-3">
 
                 @for (skill of skills; track $index) {
 
@@ -76,14 +74,6 @@
                 }
 
             </div>
-
-        </div>
-
-        <div class="skilss  h-100 w-100 bg-white my-5">
-            <!-- <img  class="w-100 h-100" src="./assets/images/Screenshot 2024-05-10 202250.png" alt=""> -->
-        </div>
-
-        <div class="skilss  h-100 w-100 bg-white my-5">
 
         </div>
     </div>

@@ -580,7 +580,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     this.inputX = x
     this.inputY = y
   }
-  @HostListener("window:deviceorientation")
+  // @HostListener("window:deviceorientation")
   onDeviceOrientation(event: any) {
     let beta = event.beta
     let gamma = event.gamma
@@ -590,7 +590,7 @@ export class Parallax2Directive implements AfterViewInit, OnDestroy {
     }
   }
 
-  @HostListener("window:devicemotion")
+  // @HostListener("window:devicemotion")
   onDeviceMotion(event: any) { 
     let beta = event.rotationRate.beta
     let gamma = event.rotationRate.gamma

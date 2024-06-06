@@ -11,10 +11,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      // window.location.reload();
-      // alert(window.innerHeight); 
-    }, 2000);
   }
 
   constructor(private router: Router) {

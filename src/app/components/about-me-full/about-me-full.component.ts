@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioService } from '../../services/portfolio.service';
+import { RipplesDirective } from '../../directives/ripples.directive';
 
 @Component({
   selector: 'app-about-me-full',
   standalone: true,
-  imports: [NgbProgressbarModule],
+  imports: [NgbProgressbarModule,RipplesDirective],
   templateUrl: './about-me-full.component.html',
   styleUrl: './about-me-full.component.scss'
 })

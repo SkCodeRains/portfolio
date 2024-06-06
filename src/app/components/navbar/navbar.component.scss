@@ -8,6 +8,30 @@ $bg: #001c2d;
         color: white !important;
     }
 
+    .back-btn {
+        @media screen and (orientation:portrait) {
+            z-index: 9999;
+            // margin-top: 55px;
+            // position: fixed;
+            width: 3rem;
+            height: 3rem;
+            padding: 10px !important;
+        }
+
+        .bi {
+            font-size: 2rem;
+        }
+    }
+
+    .show-more {
+        background: #001C2D;
+        width: 2rem;
+        height: 2rem;
+        padding: 1.5rem !important;
+        border: none !important;
+
+    }
+
     .navbar-toggler {
         border-radius: 50%;
         height: 40px;

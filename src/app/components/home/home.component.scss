@@ -114,70 +114,7 @@ section.portfolio {
             }
         }
 
-        .show-more {
-            padding: 0.5rem 3rem;
-            border-radius: 3rem;
-            font-weight: 700;
-            transition: all 0.5568s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 3rem;
-            position: relative;
-            color: white;
-            background: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
 
-            span {
-                position: absolute;
-                transform: translate(-50%, -50%);
-                background-color: rgba(255, 255, 255, 0.29);
-                border-radius: 50%;
-                animation: ripple 1s cubic-bezier(0.59, 1, 0.22, 1) 0s infinite;
-                background-size: 200% auto;
-
-                @keyframes ripple {
-                    0% {
-                        width: 0;
-                        height: 0;
-                    }
-
-                    100% {
-                        width: 200px;
-                        height: 200px;
-                    }
-                }
-            }
-
-            &:hover {
-                transform: translateY(5px);
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    background-color: white;
-                    width: 1%;
-                    height: 150%;
-                    transform: rotate(15deg);
-                    left: -10%;
-                    top: -20%;
-                    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.509);
-                    animation: flash 1.8s cubic-bezier(0, 1, 0.8, 2.8) 0s forwards;
-
-                    @keyframes flash {
-                        from {
-                            left: 0%;
-                        }
-
-                        to {
-                            left: 110%;
-                        }
-
-                    }
-
-                }
-            }
-
-            &:active {
-                scale: 0.95;
-            }
-        }
 
 
         .name {

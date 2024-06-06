@@ -62,7 +62,8 @@ export class HomeComponent {
     active: () => this.scrollAmount == -2,
     highText: "Let's connect! Whether it's a question or a project idea, I'm all ears. Reach out below or find me on social media.",
     pageTitle: "Contact Me",
-    imageSource: "./assets/images/interaction-design-and-technologies_282333076.jpeg"
+    imageSource: "./assets/images/interaction-design-and-technologies_282333076.jpeg",
+    hideMoreBtn: true
   };
 
   navigateTo(page: string) {

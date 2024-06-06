@@ -2,11 +2,13 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild, inject } from '
 import { PortfolioService } from '../../services/portfolio.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RipplesDirective } from '../../directives/ripples.directive';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: '[#app-navbar]',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgbTooltipModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -29,14 +31,17 @@ export class NavbarComponent {
     // }
     // element.classList.add("active");
     let page = element.querySelector("a")?.getAttribute("data");
-    this.toggle(); 
+    this.toggle();
     this.router.navigate([page], { skipLocationChange: true });
   }
 
   navigateTo(pageNumber: number) {
     this.folioService.scrollAmount = -pageNumber;
   }
+  navigateToHome() {
+    this.router.navigate(['home'], { skipLocationChange: true });
 
+  }
   get currentPage(): string {
     return this.router.url.toString().slice(1, this.router.url.length);
   }

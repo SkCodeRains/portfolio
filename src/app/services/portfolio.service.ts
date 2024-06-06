@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IProjects } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class PortfolioService {
 
   private _scrollAmount: number = 0;
+  projects: Array<IProjects> = getProjects();
   public get scrollAmount(): number {
     return this._scrollAmount;
   }
@@ -67,11 +69,23 @@ export class PortfolioService {
     }, {
       name: "Git",
       source: "icons8-git.svg"
-    }, {
+    },
+    {
       name: "SQL",
       source: "icons8-sql-48.png"
     },
-
+    {
+      name: "MYSQL",
+      source: "icons8-mysql-48.png"
+    },
+    {
+      name: "Postgres",
+      source: "icons8-postgres.svg"
+    },
+    {
+      name: "MongoDB",
+      source: "icons8-mongodb.svg"
+    },
     {
       name: "JavaScript",
       source: "icons8-javascript.svg"
@@ -79,7 +93,8 @@ export class PortfolioService {
     {
       name: "Docker",
       source: "icons8-docker.svg"
-    }, {
+    },
+    {
       name: "Micro-Services",
       source: "img.icons8.svg"
     },
@@ -109,8 +124,115 @@ export class PortfolioService {
       name: "React",
       source: "icons8-react-native.svg"
     },
+    {
+      name: "Angular Material",
+      source: "angular-material-logo.svg"
+    },
+    {
+      name: "Bootstrap 5",
+      source: "icons8-bootstrap-40.png"
+    },
   ];
   public get skills(): { name: string; source: string; }[] {
     return this._skills;
   }
 }
+function getProjects(): IProjects[] {
+  return [
+    {
+      links: [
+        {
+          icon: 'bi-github',
+          link: 'https://github.com/SkCodeRains/task-management',
+          title: 'GitHub'
+        },
+        {
+          icon: 'bi-box-arrow-up-right',
+          link: 'https://skcoderains.github.io/task-management/',
+          title: 'Host Link'
+        }
+      ],
+      skills: [{
+        name: "angular",
+        source: "angular.ico"
+      },
+      {
+        name: "spring boot",
+        source: "icons8-spring-boot.svg"
+      },
+      {
+        name: "Java",
+        source: "java.svg"
+      },
+      {
+        name: "HTML/CSS",
+        source: "html.svg"
+      },
+      {
+        name: "Postgres",
+        source: "icons8-postgres.svg"
+      },
+      {
+        name: "JavaScript",
+        source: "icons8-javascript.svg"
+      },
+      {
+        name: "Node Js ",
+        source: "icons8-nodejs.svg"
+      },
+      {
+        name: "Rest API",
+        source: "icons8-rest-api-48.png"
+      },
+      {
+        name: "Micro-Services",
+        source: "img.icons8.svg"
+      },
+      {
+        name: "MongoDB",
+        source: "icons8-mongodb.svg"
+      }
+      ],
+      title: 'Task Management',
+      description: 'The Task Management application is a robust solution designed to help users efficiently manage their tasks. Built with Angular for the frontend, the application boasts two backend servers: one powered by Spring Boot with MySQL, and the other by Node.js with Express.js using MongoDB. The system ensures secure user authentication and provides a seamless user experience across devices.',
+      imagesDirectory: "task-management",
+      numberOfImages: 8
+    },
+    {
+      links: [
+        {
+          icon: 'bi-github',
+          link: 'https://github.com/SkCodeRains/resume_builder',
+          title: 'GitHub'
+        },
+        {
+          icon: 'bi-box-arrow-up-right',
+          link: 'https://skcoderains.github.io/resume_builder/',
+          title: 'Host Link'
+        }
+      ],
+      skills: [{
+        name: "angular",
+        source: "angular.ico"
+      },
+      {
+        name: "HTML/CSS",
+        source: "html.svg"
+      },
+      {
+        name: "JavaScript",
+        source: "icons8-javascript.svg"
+      },
+      {
+        name: "Bootstrap 5",
+        source: "icons8-bootstrap-40.png"
+      },
+      ],
+      title: 'My Resume',
+      description: 'The Resume Application is a dynamic, interactive platform designed for creating and customizing professional resumes. The application is built using Angular, HTML, CSS, JavaScript, and Bootstrap, with a focus on generating A4-sized resumes for print and digital use. The interface is fully responsive, ensuring optimal viewing across various devices.',
+      imagesDirectory: "resume-builder",
+      numberOfImages: 1
+    },
+  ]
+}
+

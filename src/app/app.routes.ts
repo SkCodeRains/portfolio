@@ -9,6 +9,6 @@ export const routes: Routes = [
     // { path: "home", component: AboutMeFullComponent },
     { path: "home", component: HomeComponent },
     { path: "about", component: AboutMeFullComponent },
-    { path: "projects", component: UnderContructionComponent },
+    { path: "projects", component: ProjectsComponent },
     { path: "contact", component: UnderContructionComponent }
 ];
