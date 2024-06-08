@@ -79,7 +79,7 @@ export class PortfolioService {
       source: "icons8-mysql-48.png"
     },
     {
-      name: "Postgres",
+      name: "PostgreSQL",
       source: "icons8-postgres.svg"
     },
     {
@@ -169,7 +169,7 @@ function getProjects(): IProjects[] {
         source: "html.svg"
       },
       {
-        name: "Postgres",
+        name: "PostgreSQL",
         source: "icons8-postgres.svg"
       },
       {

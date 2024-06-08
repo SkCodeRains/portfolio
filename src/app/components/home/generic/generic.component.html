@@ -1,7 +1,7 @@
 @if (active) {
 <section id="home" class=" h-100 w-100 position-relative" [class.active]="active()">
-    <div class="introduction">
-        <div appSlideInOut direction="left" [inView]="active()" class="text-section vw-100 vh-100  ">
+    <div class="introduction vw-100 d-flex flex-column  ">
+        <div appSlideInOut direction="left" [inView]="active()" class="text-section  ">
             <div class="name position-relative overflow-visible  " [innerHTML]="pageTitle">
             </div>
             <br>
@@ -13,9 +13,11 @@
                 <div class="high-text text-justify pe-2 mt-3">{{highText}}</div>
 
             </div>
-            <ng-content select="[contents]"></ng-content>
+            <div>
+                <ng-content select="[contents]"></ng-content>
+            </div>
             @if (!config.hideMoreBtn) {
-            <button class="btn btn-dan ger show-more mt-2" appRipples (click)="navigateTo()">
+            <button class="btn show-more mt-3" appRipples (click)="navigateTo()">
                 Explore More !
             </button>
             }

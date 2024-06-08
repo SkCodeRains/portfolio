@@ -5,12 +5,17 @@ $arrow_bg_color :rgb(223, 214, 214);
 .navbar {
     height: 60px;
 
+    &>div {
+        max-width: 40rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
     .form-check.active {
         background-color: aliceblue;
     }
 
     .dropdown {
-        max-width: 15rem !important;
+        // max-width: 15rem !important;
 
         .dropdown-menu {
             height: 20rem;
@@ -18,7 +23,7 @@ $arrow_bg_color :rgb(223, 214, 214);
 
 
             .form-check-input {
-                scale: 1.2;
+                // scale: 1.2;
                 display: none;
             }
 
@@ -28,9 +33,11 @@ $arrow_bg_color :rgb(223, 214, 214);
 
 
     .input-group {
-        border-radius: 1rem !important;
-        max-width: 12rem;
-        width: 50%;
+        input {
+            border: none !important;
+            outline: none;
+            box-shadow: none;
+        }
     }
 
     ::placeholder {
@@ -50,6 +57,7 @@ section {
             max-width: 2000px;
 
             .timeline-container {
+                // background-color: black;
 
                 .btn {
                     width: min-content;
@@ -58,7 +66,7 @@ section {
 
                 &>.btn {
                     .bi {
-                        font-size: 3rem;
+                        font-size: clamp(1rem, 8vw, 3rem);
                         line-height: 1;
                     }
                 }
@@ -137,7 +145,7 @@ section {
     }
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (orientation:portrait) and (max-width:1300px) {
 
 
     section {
@@ -149,7 +157,7 @@ section {
                 .timeline-container {
                     // background-color: black;
                     width: 100% !important;
-                    padding: 0 0 0 3rem !important;
+                    padding: 0 0 0 2.2rem !important;
 
                     .icon {
                         left: calc(-1.5rem + 8px) !important;
@@ -170,7 +178,7 @@ section {
             }
 
             &::after {
-                left: 5px
+                left: 0px
             }
         }
     }

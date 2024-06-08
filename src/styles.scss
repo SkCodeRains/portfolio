@@ -106,11 +106,6 @@ body {
     // border: 10px solid white;
 }
 
-.main-bg {
-    background-color: $bg; //022236    
-    background-image: linear-gradient(to left, #dc3545, $bg);
-}
-
 .show-more {
     padding: 0.5rem 3rem;
     border-radius: 3rem;
@@ -181,4 +176,12 @@ body {
 
 .shadow-3d {
     box-shadow: 5px 5px 10px #00000080, -1px 0 5px #ffffff3e !important;
+}
+
+.tooltip {
+    text-transform: capitalize;
+}
+
+.capsule {
+    border-radius: 3rem;
 }
