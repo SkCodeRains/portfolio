@@ -8,12 +8,13 @@ import { GenericComponent } from "./generic/generic.component";
 import { Parallax2Directive } from "../../directives/parallax-2.directive";
 import { PortfolioService } from "../../services/portfolio.service";
 import { CommonModule } from "@angular/common";
+import { AboutMeComponent } from "../about-me/about-me.component";
 
 
 @Component({
   selector: '[#app-home]',
   standalone: true,
-  imports: [CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
+  imports: [CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent,AboutMeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

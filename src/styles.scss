@@ -11,6 +11,11 @@
 $bg: #011321;
 $bg: #001c2d;
 
+:root {
+    --panel-radius: 1rem;
+    --panel-title-size: clamp(1rem, 6vw, 2rem);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -20,7 +25,7 @@ body {
     line-height: var(--bs-body-line-height);
     color: #fff;
     text-align: var(--bs-body-text-align);
-    font-family: "Ubuntu Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     // font-family: "roboto", sans-serif; 
 
     &:has(:not(#app-home)) {
@@ -184,4 +189,19 @@ body {
 
 .capsule {
     border-radius: 3rem;
+}
+
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20p;
+    border: 1px solid Urgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 Orgba(0, 0, 0, 0.37);
+    border-radius: var(--panel-radius);
+}
+
+.panel-title{
+    font-size: var(--panel-title-size);
 }

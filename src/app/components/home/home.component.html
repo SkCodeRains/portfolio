@@ -18,7 +18,7 @@
 
 <section #portfolio appRainsScroll [(scrollAmount)]="scrollAmount"
     class="portfolio portfolio-container position-absolute top-0">
-    <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
+    <!-- <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
         [class.bg-active]="scrollAmount==0" [defaultPanel]="false">
 
         <div class="space vw-100 vh-100 " id="app-landing-page" custumPanel [class.bg-active]="scrollAmount==0"
@@ -29,12 +29,19 @@
             <li class="nav-item content-box me-1">
                 <div class="bi bi-angular h2 w-100 h-100" [ngbTooltip]="item.name">
                     <img [src]="'./assets/icons/'+item.source" alt="">
-                </div>
-                <!-- {{item.name}} -->
+                </div>             
             </li>
             }
         </ul>
+    </div> -->
+
+
+    <div class="full-width-div center" id="app-about-me" (navigate)="navigateTo('about')" [class.bg-active]="scrollAmount==0">
+
+
     </div>
+
+
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig"
         [class.bg-active]="scrollAmount==-1">
         <ul #links class=" d-flex p-0 flex-wrap me-5 shapes content-icons mt-2 m-0" contents>
