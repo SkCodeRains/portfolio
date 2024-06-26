@@ -20,8 +20,20 @@
                 </div>
             </div>
         </div>
+        <div class="about-me1 text-black mt-5 d-xxl-none">
+            @for (detail of details; track $index) {
+            <div class="flex-wrap d-flex justify-content-lg-around gap-3">
+                <div class="header">
+                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
+                </div>
+                <div class="details me-5">
+                    {{detail.info}}
+                </div>
+            </div>
 
-        <div class="about-me  responsive-width mt-5 d-xxl-flex d-none ">
+            }
+        </div>
+        <div class="about-me h-100  responsive-width mt-5 d-xxl-flex d-none ">
 
             <div class=" max-width15 m-auto d-flex  gap-3  flex-wrap justify-content-start">
                 @for (detail of details; track $index) {
@@ -38,29 +50,17 @@
             </div>
         </div>
 
-        <div class="about-me1 text-black mt-5 d-xxl-none">
-            @for (detail of details; track $index) {
-            <div class="flex-wrap d-flex justify-content-lg-around gap-3">
-                <div class="header">
-                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
-                </div>
-                <div class="details me-5">
-                    {{detail.info}}
-                </div>
-            </div>
-
-            }
-        </div>
 
 
-        <div class="skills responsive-width text-black text-capitalize pb-5">
+
+        <div class="skills h-100 responsive-width text-black text-capitalize pb-5">
 
             <header class="ms-3">
                 Skills Set
             </header>
 
             <div
-                class="skill-container max-width15 m-auto d-flex flex-wrap h-100 w-100 justify-content-center  gap-2 px-3">
+                class="skill-container max-width15 m-auto d-flex flex-wrap pb-5 w-100 justify-content-center  gap-2 px-3">
 
                 @for (skill of skills; track $index) {
 

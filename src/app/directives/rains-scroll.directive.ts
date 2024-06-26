@@ -65,9 +65,7 @@ export class RainsScrollDirective {
       }
     }
     this.mainContainer.style.transform = `translate3d(0px, ${this.scrollAmount}00vh, 0px)`;
-    this.scrollAmountChange.emit(this.scrollAmount);
-    const movementsEvent = new CustomEvent('movements');
-    document.dispatchEvent(movementsEvent);
+    this.scrollAmountChange.emit(this.scrollAmount); 
   }
   throttle(delay: number, cb: (...args: any) => void) {
     let shouldWait = false;
