@@ -1,7 +1,7 @@
 <section id="about-me " class="position-relative vw-100 overflow-x-hidden  ">
 
 
-    <div class="main container-fluid px-4 py-5 ps-3 " >
+    <div class="main container-fluid px-4 py-5 ps-3 ">
 
         <div class="welcome h-100 w-100 d-flex align-items-center ">
             <div class="about p-4 ">
@@ -20,7 +20,19 @@
                 </div>
             </div>
         </div>
+        <div class="about-me1 text-black mt-5 d-xxl-none">
+            @for (detail of details; track $index) {
+            <div class="flex-wrap d-flex justify-content-lg-around gap-3">
+                <div class="header">
+                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
+                </div>
+                <div class="details me-5">
+                    {{detail.info}}
+                </div>
+            </div>
 
+            }
+        </div>
         <div class="about-me h-100  responsive-width mt-5 d-xxl-flex d-none ">
 
             <div class=" max-width15 m-auto d-flex  gap-3  flex-wrap justify-content-start">
@@ -38,19 +50,7 @@
             </div>
         </div>
 
-        <div class="about-me1 text-black mt-5 d-xxl-none">
-            @for (detail of details; track $index) {
-            <div class="flex-wrap d-flex justify-content-lg-around gap-3">
-                <div class="header">
-                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
-                </div>
-                <div class="details me-5">
-                    {{detail.info}}
-                </div>
-            </div>
 
-            }
-        </div>
 
 
         <div class="skills h-100 responsive-width text-black text-capitalize pb-5">

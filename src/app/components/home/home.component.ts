@@ -8,13 +8,13 @@ import { GenericComponent } from "./generic/generic.component";
 import { Parallax2Directive } from "../../directives/parallax-2.directive";
 import { PortfolioService } from "../../services/portfolio.service";
 import { CommonModule } from "@angular/common";
-import { AboutMeComponent } from "../about-me/about-me.component";
 
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: '[#app-home]',
   standalone: true,
-  imports: [CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent,AboutMeComponent],
+  imports: [MatTooltipModule, CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -40,7 +40,7 @@ export class HomeComponent {
   aboutConfig: any = {
     active: () => this.scrollAmount == 0,
     highText: `Passionate Full Stack Developer 2+ years of experience adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
-    pageTitle: "Mohammed <br> Shaikh",
+    pageTitle: "Mohammed Shaikh",
     imageSource: "./assets/images/AdobeStock_175632386-e1538970544824-1920x960.jpeg"
   };
   /* 

@@ -78,7 +78,7 @@ $bg: #001c2d;
 
     .title {
         font-weight: 700;
-        font-size: 1.8em;
+        font-size: clamp(1.5em, 3rem, 3vh);
     }
 
     height: 60px;

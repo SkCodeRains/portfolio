@@ -85,7 +85,7 @@ section.portfolio {
         }
 
         .shapes {
-            font-size: $icon-size;
+            font-size: calc($icon-size - 1rem);
             height: $icon-size;
             overflow: hidden;
 
@@ -106,6 +106,7 @@ section.portfolio {
 
 ::ng-deep {
     .introduction {
+        background-color: rgba(0, 0, 0, 0.294);
 
         .text-section {
             padding-bottom: 2rem;
@@ -178,7 +179,7 @@ section.portfolio {
             justify-content: end;
         }
 
-        .text-section { 
+        .text-section {
             margin-left: 2rem !important;
         }
     }

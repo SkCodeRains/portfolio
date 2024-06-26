@@ -2,7 +2,11 @@ import { AfterViewInit, Component } from '@angular/core';
 import { IProjects, ISkills } from '../../interfaces/interface';
 import { NgbCarouselConfig, NgbCarouselModule, NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioService } from '../../services/portfolio.service';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +16,11 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
     ReactiveFormsModule,
     FormsModule,
     NgbTooltipModule,
-    NgbCarouselModule],
+    NgbCarouselModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTooltipModule
+  ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -22,7 +30,7 @@ export class ProjectsComponent implements AfterViewInit {
   projects!: IProjects[];
 
   filterForm = this.fb.group({
-    "skills": [[]],
+    "skills": '',
     "projectName": ""
   })
 
@@ -32,14 +40,18 @@ export class ProjectsComponent implements AfterViewInit {
   }
 
   get projectNameControl() {
-    return this.filterForm.controls.projectName
+    return this.filterForm.controls.projectName;
+  }
 
+  get skillsControl() {
+    return this.filterForm.controls.skills;
   }
 
   constructor(private dataService: PortfolioService, private fb: FormBuilder, private carousel: NgbCarouselConfig) {
     this._techStack = this.dataService.skills.map((option: any) => {
       return { ...option, checked: false };
     })
+
     this.projects = this.dataService.projects;
     this.carousel.interval = 10000;
     this.carousel.pauseOnHover = true;
@@ -78,9 +90,7 @@ export class ProjectsComponent implements AfterViewInit {
     this.skillsControl.setValue(value);
   }
 
-  get skillsControl() {
-    return this.filterForm.controls.skills;
-  }
+
 
   filterData() {
     this.projects = this.dataService.projects.filter((project) => {
@@ -91,11 +101,19 @@ export class ProjectsComponent implements AfterViewInit {
       }
       if (this.skillsControl?.value) {
         for (const skill of this.selectedSkills) {
+          console.log(skill);
           let contains = false;
+          let lwSkill = skill.toLocaleLowerCase();
           innerLoop: for (const existSkill of project.skills) {
-            if (skill.toLocaleLowerCase().includes(existSkill.name.toLocaleLowerCase())) {
+            if (lwSkill.includes(existSkill.name.toLocaleLowerCase())) {
               contains = true;
               break innerLoop
+            }
+            for (const sub of existSkill.subTech || []) {
+              if (lwSkill.includes(sub.toLocaleLowerCase())) {
+                contains = true;
+                break innerLoop
+              }
             }
           }
           if (!contains) {

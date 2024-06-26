@@ -14,13 +14,13 @@ $arrow_bg_color :rgb(223, 214, 214);
         background-color: aliceblue;
     }
 
-    .dropdown {
+    [ngbdropdown] {
         // max-width: 15rem !important;
 
         .dropdown-menu {
             height: 20rem;
             white-space: nowrap;
-
+            overflow: hidden;
 
             .form-check-input {
                 // scale: 1.2;
@@ -54,19 +54,15 @@ section {
 
 
         .projects {
-            max-width: 2000px;
+            width: 100%;
+            display: grid;
+            grid-gap: 10px;
+            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(min(500px,100%), 1fr));
 
             .timeline-container {
-                // background-color: black;
-
-                .btn {
-                    width: min-content;
-                    height: min-content;
-                }
-
                 &>.btn {
                     .bi {
-                        font-size: clamp(1rem, 8vw, 3rem);
                         line-height: 1;
                     }
                 }
@@ -77,78 +73,16 @@ section {
                     top: 20px;
                 }
 
-                &.start-50 {
-                    .icon {
-                        left: -1.5rem;
-                    }
-
-                    .content {
-                        &::after {
-                            left: -15px;
-                            border-right: 15px solid $arrow_bg_color;
-                        }
-                    }
-
-                }
-
-                &:not(.start-50) {
-                    .content {
-                        &::after {
-                            right: -15px;
-                            border-left: 15px solid $arrow_bg_color;
-                        }
-                    }
-                }
-
-                .content {
-                    border-radius: 1rem;
-
-                    &::after {
-                        content: "";
-                        width: 0;
-                        height: 0;
-                        position: absolute;
-                        top: 1rem;
-                        border-top: 15px solid transparent;
-                        border-bottom: 15px solid transparent;
-                    }
-
-                    .card-body {
-                        .img-container {
-                            .img {
-                                width: 100%;
-                                border-radius: 1rem;
-                                object-fit: contain;
-                                aspect-ratio: 1280 / 720;
-                            }
-                        }
-
-                        &>p {
-                            text-align: justify;
-                        }
-                    }
-                }
             }
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            width: 6px;
-            height: 100%;
-            background-color: $arrow_bg_color;
-            left: calc(50% - 3px);
-            top: 0;
-            z-index: -1;
-            border-radius: 3rem;
-        }
+
     }
 }
 
 @media screen and (orientation:portrait) and (max-width:1300px) {
-
-
     section {
+        padding: 5px !important;
 
         .timeline {
 
@@ -157,48 +91,17 @@ section {
                 .timeline-container {
                     // background-color: black;
                     width: 100% !important;
-                    padding: 0 0 0 2.2rem !important;
-
-                    .icon {
-                        left: calc(-1.5rem + 8px) !important;
-                        right: unset !important;
-                    }
-
-                    .content {
-
-                        &::after {
-                            left: -15px;
-                            border-top: 15px solid transparent;
-                            border-bottom: 15px solid transparent;
-                            border-right: 15px solid $arrow_bg_color;
-                            border-left: unset !important;
-                        }
-                    }
+                    padding: 0 0 0 0 !important;
+                    margin-top: 1rem !important;
                 }
             }
 
-            &::after {
-                left: 0px
-            }
-        }
-    }
-
-    .start-50 {
-        left: 0 !important;
-    }
-}
-
-
-@media screen and (orientation:landscape) {
-
-    .content-icons {
-
-        .content-box {
-            margin: 0 1rem;
         }
     }
 
 }
+
+ 
 
 .content-icons {
     width: 100%;

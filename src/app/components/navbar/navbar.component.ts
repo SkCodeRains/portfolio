@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RipplesDirective } from '../../directives/ripples.directive';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: '[#app-navbar]',
   standalone: true,
-  imports: [CommonModule,NgbTooltipModule],
+  imports: [CommonModule,MatTooltipModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

@@ -27,15 +27,6 @@ export class PortfolioService {
     `
     },
     {
-      title: "Passion",
-      info: `
-      I'm a passionate and results-oriented full-stack web developer with a strong
-                        desire to create user-friendly and visually appealing web applications. I enjoy working on both
-                        the front-end (user interface) and back-end (server-side) aspects of web development, which
-                        allows me to bring a holistic perspective to every project I undertake.
-                        `
-    },
-    {
       title: "History",
       info: `After graduating in 2020, I embarked on a journey of continuous learning, immersing myself in
       various technologies such as Angular, Java, Spring Boot, MySQL, and Oracle DB. In
@@ -45,7 +36,17 @@ export class PortfolioService {
       extensively with Angular, Java, Spring Boot, PostgreSQL, Docker, Jenkins, and more. However, in
       October 2023, I made the decision to resign from my position, ready to explore new opportunities
       and challenges.`
-    }
+    },
+    {
+      title: "Passion",
+      info: `
+      I'm a passionate and results-oriented full-stack web developer with a strong
+                        desire to create user-friendly and visually appealing web applications. I enjoy working on both
+                        the front-end (user interface) and back-end (server-side) aspects of web development, which
+                        allows me to bring a holistic perspective to every project I undertake.
+                        `
+    },
+
   ];
   public get details(): { title: string; info: string; }[] {
     return this._details;
@@ -154,31 +155,27 @@ function getProjects(): IProjects[] {
       ],
       skills: [{
         name: "angular",
-        source: "angular.ico"
+        source: "angular.ico",
+        subTech: ["HTML", "CSS", "SCSS", "JAVASCRIPT", "TYPESCRIPT", "CLI"]
       },
       {
         name: "spring boot",
-        source: "icons8-spring-boot.svg"
-      },
-      {
-        name: "Java",
-        source: "java.svg"
-      },
-      {
-        name: "HTML/CSS",
-        source: "html.svg"
+        source: "icons8-spring-boot.svg",
+        subTech: ["JAVA", "SPRING", "SECURITY", "OAUTH", "MVC", "SPRING FRAMEWORK"]
       },
       {
         name: "PostgreSQL",
-        source: "icons8-postgres.svg"
+        source: "icons8-postgres.svg",
+        subTech: ["SQL", "PLSQL"]
       },
       {
         name: "JavaScript",
         source: "icons8-javascript.svg"
       },
       {
-        name: "Node Js ",
-        source: "icons8-nodejs.svg"
+        name: "Node Js",
+        source: "icons8-nodejs.svg",
+        subTech: ["EXPRESS", "NPM"]
       },
       {
         name: "Rest API",
@@ -190,13 +187,57 @@ function getProjects(): IProjects[] {
       },
       {
         name: "MongoDB",
-        source: "icons8-mongodb.svg"
+        source: "icons8-mongodb.svg",
+        "subTech": ["NOSQL"]
+      },
+      {
+        name: "Git",
+        source: "icons8-git.svg"
       }
       ],
       title: 'Task Management',
       description: 'The Task Management application is a robust solution designed to help users efficiently manage their tasks. Built with Angular for the frontend, the application boasts two backend servers: one powered by Spring Boot with MySQL, and the other by Node.js with Express.js using MongoDB. The system ensures secure user authentication and provides a seamless user experience across devices.',
       imagesDirectory: "task-management",
       numberOfImages: 8
+    },
+    {
+      links: [
+        {
+          icon: 'bi-github',
+          link: 'https://github.com/SkCodeRains/pics-anime',
+          title: 'GitHub'
+        },
+        {
+          icon: 'bi-box-arrow-up-right',
+          link: 'https://skcoderains.github.io/pics-anime/',
+          title: 'Host Link'
+        }
+      ],
+      skills: [{
+        name: "angular",
+        source: "angular.ico"
+      },
+      {
+        name: "HTML/CSS",
+        source: "html.svg"
+      },
+      {
+        name: "JavaScript",
+        source: "icons8-javascript.svg"
+      },
+      {
+        name: "Rest API",
+        source: "icons8-rest-api-48.png"
+      },
+      {
+        name: "Bootstrap 5",
+        source: "icons8-bootstrap-40.png"
+      },
+      ],
+      title: 'Anime Pics',
+      description: 'The application is based on consuming third party api for getting the urls of anime pictures and support filtering the types of the animes,  ',
+      imagesDirectory: "resume-builder",
+      numberOfImages: 1
     },
     {
       links: [
@@ -233,6 +274,7 @@ function getProjects(): IProjects[] {
       imagesDirectory: "resume-builder",
       numberOfImages: 1
     },
+
   ]
 }
 

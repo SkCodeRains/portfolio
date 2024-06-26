@@ -17,5 +17,6 @@ export interface IProjectsLinks {
 export interface ISkills {
     name: string,
     source: string,
-    checked?: boolean
+    checked?: boolean,
+    subTech?: string[]
 }

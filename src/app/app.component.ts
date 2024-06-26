@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   constructor(private router: Router) {
-    this.router.navigate(["home"], { skipLocationChange: true });
+    this.router.navigate(["home"], { skipLocationChange: true }); 
   }
 
 }

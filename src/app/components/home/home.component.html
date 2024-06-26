@@ -10,15 +10,15 @@
     </div>
 </div>
 
-<nav class="side-nav d-flex justify-content-center overflow-visible align-items-baseline  ">
-    <span class="btn" ngbTooltip="Home" [class.active]="scrollAmount==0" (click)="scrollAmount=0"></span>
-    <span class="btn" ngbTooltip="About" [class.active]="scrollAmount==-1" (click)="scrollAmount=-1"></span>
-    <span class="btn" ngbTooltip="Projects" [class.active]="scrollAmount==-2" (click)="scrollAmount=-2"></span>
+<nav class="side-nav d-flex justify-content-center overflow-visible align-items-baseline">
+    <span class="btn" matTooltip="Home" [class.active]="scrollAmount==0" (click)="scrollAmount=0"></span>
+    <span class="btn" matTooltip="About" [class.active]="scrollAmount==-1" (click)="scrollAmount=-1"></span>
+    <span class="btn" matTooltip="Projects" [class.active]="scrollAmount==-2" (click)="scrollAmount=-2"></span> 
 </nav>
-
+ 
 <section #portfolio appRainsScroll [(scrollAmount)]="scrollAmount"
     class="portfolio portfolio-container position-absolute top-0">
-    <!-- <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
+    <div class="full-width-div" id="app-generic" (navigate)="navigateTo('about')" [config]="aboutConfig"
         [class.bg-active]="scrollAmount==0" [defaultPanel]="false">
 
         <div class="space vw-100 vh-100 " id="app-landing-page" custumPanel [class.bg-active]="scrollAmount==0"
@@ -27,25 +27,24 @@
         <ul #links class=" d-flex p-0 flex-wrap content-icons mt-1 m-0" contents>
             @for (item of skills; track $index) {
             <li class="nav-item content-box me-1">
-                <div class="bi bi-angular h2 w-100 h-100" [ngbTooltip]="item.name">
+                <div class="bi bi-angular h2 w-100 h-100" [matTooltip]="item.name">
                     <img [src]="'./assets/icons/'+item.source" alt="">
-                </div>             
+                </div>
             </li>
             }
         </ul>
-    </div> -->
-
-
-    <div class="full-width-div center" id="app-about-me" (navigate)="navigateTo('about')" [class.bg-active]="scrollAmount==0">
-
-
     </div>
 
+<!-- 
+    <div class="full-width-div center" id="app-about-me" (navigate)="navigateTo('about')"
+        [class.bg-active]="scrollAmount==-1">
+
+
+    </div> -->
 
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('projects')" [config]="projectsConfig"
-        [class.bg-active]="scrollAmount==-1">
+        [class.bg-active]="scrollAmount==-2">
         <ul #links class=" d-flex p-0 flex-wrap me-5 shapes content-icons mt-2 m-0" contents>
-
             <li class="nav-item content-box bi bi-square ">
             </li>
             <li class="nav-item content-box bi bi-circle ">
@@ -67,8 +66,8 @@
         </ul>
     </div>
     <div class="full-width-div" id="app-generic" (navigate)="navigateTo('contact')" [config]="contactConfig"
-        [class.bg-active]="scrollAmount==-2">
-        <ul #links class=" d-flex p-0 flex-wrap me-5 mt-2" contents>
+        [class.bg-active]="scrollAmount==-3">
+        <ul #links class=" d-flex p-0 gap-4 flex-wrap me-5 mt-2" contents>
             <li class="nav-item content-box  me-2">
                 <a class="nav-link btn" target="_blank" href="https://github.com/SkCodeRains" data="home">
                     <div class="bi bi-github h2"></div>
@@ -88,7 +87,7 @@
                 </a>
             </li>
             <li class="nav-item  content-box me-2">
-                <a class="nav-link btn" target="_blank" href="tel:+917972914439" data="home">
+                <a class="nav-link btn" target="_blank" href="https://skcoderains.github.io/resume_builder/" data="home">
                     <div class="bi bi-phone h2  "></div>
                     Call
                 </a>
