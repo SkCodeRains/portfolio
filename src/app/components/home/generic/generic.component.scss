@@ -20,7 +20,7 @@
     }
 }
 
-@media screen and (orientation:portrait) { 
+@media screen and (orientation:portrait) {
     .space {
         .stars {
             left: 0%;
@@ -70,10 +70,10 @@
             justify-content: center;
 
             .image-cover.active {
-                position: relative; 
+                position: relative;
 
                 &::after,
-                &::before { 
+                &::before {
                     content: "";
                     height: 100%;
                     background-color: #dc3545;
@@ -134,4 +134,8 @@
             }
         }
     }
+}
+
+.left-content {
+    background-color: rgba(0, 0, 0, 0.306);
 }

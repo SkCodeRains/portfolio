@@ -9,12 +9,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-  }
-
+export class AppComponent {
   constructor(private router: Router) {
-    this.router.navigate(["home"], { skipLocationChange: true }); 
+    this.router.navigate(["home"], { skipLocationChange: true });
   }
 
 }

@@ -1,10 +1,10 @@
 <section id="about-me " class="position-relative vw-100 overflow-x-hidden  ">
 
 
-    <div class="main container-fluid px-4 py-5 ps-3 ">
+    <div class="main container-fluid py-5 px-0">
 
         <div class="welcome h-100 w-100 d-flex align-items-center ">
-            <div class="about p-4 ">
+            <div class="about ">
                 <div class="w-100 p-3 m-auto">
                     <h1 class="fw-bold">Welcome !!</h1>
                     <h2>I'm Mohammed Shaikh, with over two years of experience in web development. </h2>
@@ -12,6 +12,7 @@
                     <span> </span>
 
                 </div>
+
             </div>
             <div class="fill-gape"></div>
             <div class="image  ">
@@ -20,62 +21,52 @@
                 </div>
             </div>
         </div>
-        <div class="about-me1 text-black mt-5 d-xxl-none">
-            @for (detail of details; track $index) {
-            <div class="flex-wrap d-flex justify-content-lg-around gap-3">
-                <div class="header">
-                    <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
-                </div>
-                <div class="details me-5">
-                    {{detail.info}}
-                </div>
-            </div>
-
-            }
-        </div>
-        <div class="about-me h-100  responsive-width mt-5 d-xxl-flex d-none ">
-
-            <div class=" max-width15 m-auto d-flex  gap-3  flex-wrap justify-content-start">
+        <div class="px-4  ps-3">
+            <div class="about-me1 text-black center flex-column">
                 @for (detail of details; track $index) {
-                <div class="card">
-                    <div class="card-header">
-                        {{detail.title}}
+                <div class="flex-wrap d-flex justify-content-lg-around gap-3">
+                    <div class="header">
+                        <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
                     </div>
-                    <div class="card-body">
-                        <div class="details">{{detail.info}} </div>
-                    </div>
-
-                </div>
-                }
-            </div>
-        </div>
-
-
-
-
-        <div class="skills h-100 responsive-width text-black text-capitalize pb-5">
-
-            <header class="ms-3">
-                Skills Set
-            </header>
-
-            <div
-                class="skill-container max-width15 m-auto d-flex flex-wrap pb-5 w-100 justify-content-center  gap-2 px-3">
-
-                @for (skill of skills; track $index) {
-
-
-                <div class="card circle">
-                    <div class="card-header text-center mt-3">{{skill.name}}</div>
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <img [src]="'./assets/icons/'+skill.source" alt="">
+                    <div class="details me-5">
+                        {{detail.info}}
                     </div>
                 </div>
                 }
 
+
             </div>
 
+
+
+            <div class="flex-wrap d-flex justify-content-lg-around gap-3 mt-5">
+                <div class="header w-100">
+                    <span class="bi text-danger bi-arrow-right ms-3 h2"> Skills Sets</span>
+                </div>
+                <div class="details  m-0 p-0 mt-5">
+                    <div class="skills h-100 responsive-width text-black text-capitalize ">
+                        <div
+                            class="skill-container max-width15 m-auto d-flex flex-wrap pb-5  justify-content-lg-start justify-content-center  gap-2 px-3">
+
+                            @for (skill of skills; track $index) {
+
+
+                            <div class="card circle">
+                                <div class="card-header text-center mt-3">{{skill.name}}</div>
+                                <div class="card-body d-flex justify-content-center align-items-center">
+                                    <img [src]="'./assets/icons/'+skill.source" alt="">
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </div>
 
 

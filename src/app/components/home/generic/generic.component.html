@@ -1,16 +1,37 @@
 @if (active) {
-<section id="home" class=" h-100 w-100 position-relative" [class.active]="active()">
-    <div class="introduction vw-100 d-flex flex-column  ">
+<section class=" h-100 w-100 position-relative" [class.active]="active()">
+
+    <div class="left-content position-absolute top-0 end-0 start-0 bottom-0 vw-100 vh-100">
+        @if (defaultPanel) {
+        <div class="space">
+            <div class="stars btn" appSlideInOut direction="right" [inView]="active()">
+                <div class="layer" data-depth="0.3">
+                    <div class="image-cover" [class.active]="active()">
+                        <!-- <ng-content select="[question]"></ng-content> -->
+                        <img [src]="imageSource" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        }@else {
+        <ng-content select="[custumPanel]"></ng-content>
+        }
+    </div>
+
+    <div class="introduction vw-100 h-100 d-flex flex-column  ">
         <div appSlideInOut direction="left" [inView]="active()" class="text-section  ">
             <div class="name position-relative overflow-visible text-uppercase " [innerHTML]="pageTitle">
             </div>
-            <br>
             <div>
                 <div class="liners position-relative">
                     <span class="bg-danger"></span>
                     <span class="bg-danger"></span>
                 </div>
-                <div class="high-text text-justify pe-2 mt-3">{{highText}}</div>
+                <div class="high-text text-justify pe-2 mt-3 row row-cols-lg-2">
+                    <div>
+                        {{highText}}
+                    </div>
+                </div>
 
             </div>
             <div>
@@ -23,20 +44,8 @@
             }
         </div>
     </div>
-    @if (defaultPanel) {
-    <div class="space vw-100 vh-100">
-        <div class="stars btn" appSlideInOut direction="right" [inView]="active()">
-            <div class="layer" data-depth="0.3">
-                <div class="image-cover" [class.active]="active()">
-                    <!-- <ng-content select="[question]"></ng-content> -->
-                    <img [src]="imageSource" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    }@else {
-    <ng-content select="[custumPanel]"></ng-content>
-    }
+
+
 
 </section>
 }

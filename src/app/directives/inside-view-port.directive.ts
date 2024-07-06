@@ -14,8 +14,6 @@ export class InsideViewPortDirective {
 
   @HostListener('document:movements')
   onWindowScroll() {
-    console.log("called");
-
     // When the user scrolls, check if the element is in the viewport
     setTimeout(() => {
       this.checkIfElementInView();

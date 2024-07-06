@@ -106,7 +106,7 @@ section.portfolio {
 
 ::ng-deep {
     .introduction {
-        background-color: rgba(0, 0, 0, 0.294);
+        // background-color: rgba(0, 0, 0, 0.3);
 
         .text-section {
             padding-bottom: 2rem;
@@ -115,7 +115,7 @@ section.portfolio {
             .high-text {
                 width: $content-width;
                 text-align: justify;
-                font-size: clamp(2vw, 2rem, 5vw);
+                font-size: clamp(1vw, 2rem, 4vw);
             }
         }
 
@@ -123,7 +123,7 @@ section.portfolio {
 
 
         .name {
-            font-size: clamp(2rem, 10vw, 3rem);
+            font-size: clamp(2rem, 3rem, 4vw);
             line-height: 1;
             letter-spacing: 0.1em;
             // margin-bottom: 0.5rem;

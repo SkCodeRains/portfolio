@@ -82,7 +82,7 @@ export class SlideInOutDirective {
   }
 
   translateX(to: number) {
-    this.element.setAttribute("style", `${this.cubic};transform:translateX(${to}vw);opacity:${Math.abs(to)==100?0:1}`);
+    this.element.setAttribute("style", `${this.cubic};transform:translateX(${to}vw);opacity:${Math.abs(to)==100?-10:1}`);
   }
 
   translateY(to: number) {

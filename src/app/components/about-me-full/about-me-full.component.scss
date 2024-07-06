@@ -2,10 +2,6 @@ $bg: #011321;
 $bg: #001c2d;
 $color: #27aae1;
 
-.max-width15 {
-    max-width: 2000px;
-}
-
 section {
     overflow-y: auto;
     overflow-x: hidden;
@@ -23,15 +19,13 @@ section {
 
 
     .main {
-        * {
-            border-radius: 1rem;
+        * { 
         }
 
 
         .welcome {
             box-sizing: border-box;
-            background-color: black;
-            border-radius: 1rem;
+            background-color: black; 
 
             .image {
                 width: clamp(30rem, 25%, 25%);
@@ -116,6 +110,11 @@ section {
         }
 
         .about-me1 {
+            margin-top: 15rem;
+            &>div {
+                max-width: min(100%,2000px);
+            }
+
             .details {
                 // box-shadow: 5px 5px 15px 0px #e2e8ec, inset 5px 5px 15px 0px #e2e8ec, inset -5px -5px 15px 0px #ffffff, -5px -5px 15px 0px #ffffff;
                 margin: 1rem;
