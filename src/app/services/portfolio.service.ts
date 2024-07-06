@@ -23,7 +23,7 @@ export class PortfolioService {
     of knowledge and experiences. My journey showcases perseverance and a commitment to growth. I'm
     passionate about making a difference and believe in the limitless potential of the human spirit.
     Let's connect and explore opportunities together.
-    Having 2 years of experience in web devolvement, not only that have worked as electrician about 4 years handling 5 technician teams.
+    Having 2 years of experience in web devolvement.
     `
     },
     {
@@ -65,6 +65,10 @@ export class PortfolioService {
       source: "java.svg"
     },
     {
+      name: "Node Js ",
+      source: "icons8-nodejs.svg"
+    },
+    {
       name: "HTML/CSS",
       source: "html.svg"
     }, {
@@ -76,9 +80,10 @@ export class PortfolioService {
       source: "icons8-sql-48.png"
     },
     {
-      name: "MYSQL",
-      source: "icons8-mysql-48.png"
+      name: "Docker",
+      source: "icons8-docker.svg"
     },
+
     {
       name: "PostgreSQL",
       source: "icons8-postgres.svg"
@@ -92,8 +97,8 @@ export class PortfolioService {
       source: "icons8-javascript.svg"
     },
     {
-      name: "Docker",
-      source: "icons8-docker.svg"
+      name: "MYSQL",
+      source: "icons8-mysql-48.png"
     },
     {
       name: "Micro-Services",
@@ -108,10 +113,7 @@ export class PortfolioService {
       name: "Spring Cloud",
       source: "spring-cloud.svg"
     },
-    {
-      name: "Node Js ",
-      source: "icons8-nodejs.svg"
-    },
+
     {
       name: "Jenkins",
       source: "icons8-jenkins.svg"

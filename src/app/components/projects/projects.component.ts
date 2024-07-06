@@ -100,8 +100,7 @@ export class ProjectsComponent implements AfterViewInit {
         res = project.title.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
       }
       if (this.skillsControl?.value) {
-        for (const skill of this.selectedSkills) {
-          console.log(skill);
+        for (const skill of this.selectedSkills) { 
           let contains = false;
           let lwSkill = skill.toLocaleLowerCase();
           innerLoop: for (const existSkill of project.skills) {

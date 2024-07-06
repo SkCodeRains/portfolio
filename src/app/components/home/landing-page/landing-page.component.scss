@@ -62,6 +62,7 @@
 
         &:nth-child(7) {
             z-index: 400;
+            background-blend-mode: color;
 
             div {
                 position: relative;
@@ -81,8 +82,9 @@
 }
 
 .title {
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:400px) {
         position: fixed !important;
-        top: 35%;
+        top: 30%;
+        margin: auto;
     }
 }
