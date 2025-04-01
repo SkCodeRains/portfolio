@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'; 
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SlideInOutDirective } from '../../../directives/slide-in-out.directive';
 import { RipplesDirective } from '../../../directives/ripples.directive';
 import { Parallax2Directive } from '../../../directives/parallax-2.directive';
 
 @Component({
   selector: '[#app-generic]',
-  standalone: true,
-  imports: [Parallax2Directive, SlideInOutDirective, RipplesDirective],
+  imports: [SlideInOutDirective, RipplesDirective],
   templateUrl: './generic.component.html',
   styleUrl: './generic.component.scss'
 })

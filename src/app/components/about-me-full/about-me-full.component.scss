@@ -118,11 +118,11 @@ section {
             .details {
                 // box-shadow: 5px 5px 15px 0px #e2e8ec, inset 5px 5px 15px 0px #e2e8ec, inset -5px -5px 15px 0px #ffffff, -5px -5px 15px 0px #ffffff;
                 margin: 1rem;
-                padding: 1rem;
+                // padding: 1rem;
                 box-sizing: content-box;
                 max-width: 100%;
                 width: 33%;
-                min-width: 20rem;
+                min-width: min(100%,20rem);
                 text-align: justify;
             }
         }

@@ -28,8 +28,7 @@
                     <div class="header">
                         <span class="bi text-danger bi-arrow-right ms-3 h4"> {{detail.title}}</span>
                     </div>
-                    <div class="details me-5">
-                        {{detail.info}}
+                    <div class="details" [innerHTML]="detail.info">
                     </div>
                 </div>
                 }

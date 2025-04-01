@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { IProjects, ISkills } from '../../interfaces/interface';
 import { NgbCarouselConfig, NgbCarouselModule, NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioService } from '../../services/portfolio.service';
@@ -10,7 +10,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-projects',
-  standalone: true,
   imports: [
     NgbDropdownModule,
     ReactiveFormsModule,
@@ -28,6 +27,7 @@ export class ProjectsComponent implements AfterViewInit {
 
 
   projects!: IProjects[];
+  fb = inject(FormBuilder);
 
   filterForm = this.fb.group({
     "skills": '',
@@ -47,7 +47,7 @@ export class ProjectsComponent implements AfterViewInit {
     return this.filterForm.controls.skills;
   }
 
-  constructor(private dataService: PortfolioService, private fb: FormBuilder, private carousel: NgbCarouselConfig) {
+  constructor(private dataService: PortfolioService, private carousel: NgbCarouselConfig) {
     this._techStack = this.dataService.skills.map((option: any) => {
       return { ...option, checked: false };
     })
@@ -100,7 +100,7 @@ export class ProjectsComponent implements AfterViewInit {
         res = project.title.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
       }
       if (this.skillsControl?.value) {
-        for (const skill of this.selectedSkills) { 
+        for (const skill of this.selectedSkills) {
           let contains = false;
           let lwSkill = skill.toLocaleLowerCase();
           innerLoop: for (const existSkill of project.skills) {

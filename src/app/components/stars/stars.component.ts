@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-stars',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './stars.component.html',
-  styleUrl: './stars.component.scss'
+    selector: 'app-stars',
+    imports: [CommonModule],
+    templateUrl: './stars.component.html',
+    styleUrl: './stars.component.scss'
 })
 export class StarsComponent implements AfterViewInit, OnDestroy {
   destroyed: any;

@@ -7,11 +7,10 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: '[#app-navbar]',
-  standalone: true,
-  imports: [CommonModule,MatTooltipModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+    selector: '[#app-navbar]',
+    imports: [CommonModule, MatTooltipModule],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
 

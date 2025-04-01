@@ -19,32 +19,27 @@ export class PortfolioService {
   private _details: { title: string; info: string; }[] = [
     {
       title: "About Me",
-      info: `A resilient and ambitious individual. Graduating in 2020, I bring a wealth
-    of knowledge and experiences. My journey showcases perseverance and a commitment to growth. I'm
-    passionate about making a difference and believe in the limitless potential of the human spirit.
-    Let's connect and explore opportunities together.
-    Having 2 years of experience in web devolvement.
+      info: `A resilient and ambitious individual, I graduated in 2020 and bring a wealth of knowledge and experience to the table. With a robust foundation in both frontend and backend technologies, I am well-equipped to tackle complex challenges and deliver innovative solutions. Over the past two years, I've honed my skills in various domains, focusing on creating scalable, efficient, and user-centric applications. Let's connect and explore opportunities to make a meaningful impact together.
     `
     },
     {
       title: "History",
-      info: `After graduating in 2020, I embarked on a journey of continuous learning, immersing myself in
-      various technologies such as Angular, Java, Spring Boot, MySQL, and Oracle DB. In
-      November 2021 ,
-      I secured a position as a full-stack developer at OSI Systems in
-      Hyderabad, where I worked
-      extensively with Angular, Java, Spring Boot, PostgreSQL, Docker, Jenkins, and more. However, in
-      October 2023, I made the decision to resign from my position, ready to explore new opportunities
-      and challenges.`
+      info: `
+      After graduating in 2020, I embarked on a journey of continuous learning, immersing myself in various technologies such as Angular, Java, Spring Boot, MySQL, and Oracle DB. In November 2021, I secured a position as a full-stack developer at OSI Systems in Hyderabad. There, I worked extensively with Angular, Java, Spring Boot, PostgreSQL, Docker, Jenkins, and more. My key contributions included:
+
+      >: Microservices Development: Designed and implemented scalable microservices architectures.<br>
+      >: Real-Time Data Analytics: Developed systems for real-time data processing and analytics.<br>
+      >: User Interface Design: Created user-friendly interfaces and dynamic, responsive web applications.<br>
+      >: Comprehensive Management Systems: Built and maintained various management systems ensuring efficiency and reliability.<br>
+
+      In October 2023, I chose to resign from my position, ready to explore new opportunities and challenges.
+      `
     },
     {
       title: "Passion",
       info: `
-      I'm a passionate and results-oriented full-stack web developer with a strong
-                        desire to create user-friendly and visually appealing web applications. I enjoy working on both
-                        the front-end (user interface) and back-end (server-side) aspects of web development, which
-                        allows me to bring a holistic perspective to every project I undertake.
-                        `
+      I am a passionate and results-oriented full-stack web developer with a strong desire to create user-friendly and visually appealing web applications. I enjoy working on both the front-end (user interface) and back-end (server-side) aspects of web development, which allows me to bring a holistic perspective to every project I undertake. My goal is to continue growing and making a positive impact through innovative technology solutions.
+      `
     },
 
   ];
