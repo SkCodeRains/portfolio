@@ -6,8 +6,7 @@ import { RipplesDirective } from '../../directives/ripples.directive';
 
 @Component({
   selector: 'app-about-me-full',
-  standalone: true,
-  imports: [NgbProgressbarModule,RipplesDirective],
+  imports: [NgbProgressbarModule],
   templateUrl: './about-me-full.component.html',
   styleUrl: './about-me-full.component.scss'
 })

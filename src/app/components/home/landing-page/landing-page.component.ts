@@ -5,8 +5,7 @@ import { Parallax2Directive } from '../../../directives/parallax-2.directive';
 
 @Component({
   selector: '[#app-landing-page]',
-  standalone: true,
-  imports: [ParallaxDirective, SlideInOutDirective,Parallax2Directive],
+  imports: [SlideInOutDirective, Parallax2Directive],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

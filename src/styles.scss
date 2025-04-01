@@ -1,11 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-@import "bootstrap-icons/font/bootstrap-icons.css";
-// @import 'bootstrap-icons/font/bootstrap-icons';
-/* Option 2: Import via CSS */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@use 'bootstrap/scss/bootstrap';
+@use "bootstrap-icons/font/bootstrap-icons.css";
+// @use 'bootstrap-icons/font/bootstrap-icons';
+/* Option 2: Import via CSS */ 
 
 
 $bg: #011321;
@@ -13,8 +12,8 @@ $bg: #001c2d;
 
 :root {
     --panel-radius: 1rem;
-    --capsule-radius:3rem,
-    --panel-title-size: clamp(1rem, 6vw, 2rem);
+    --capsule-radius: 3rem,
+        --panel-title-size: clamp(1rem, 6vw, 2rem);
 }
 
 html {
@@ -203,4 +202,3 @@ body {
     box-shadow: 0 8px 32px 0 Orgba(0, 0, 0, 0.37);
     border-radius: var(--panel-radius);
 }
- 

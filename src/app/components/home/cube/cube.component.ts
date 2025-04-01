@@ -1,11 +1,10 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
-  selector: '[#app-cube]',
-  standalone: true,
-  imports: [],
-  templateUrl: './cube.component.html',
-  styleUrl: './cube.component.scss'
+    selector: '[#app-cube]',
+    imports: [],
+    templateUrl: './cube.component.html',
+    styleUrl: './cube.component.scss'
 })
 export class CubeComponent implements AfterViewInit {
 

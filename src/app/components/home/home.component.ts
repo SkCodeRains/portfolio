@@ -12,11 +12,10 @@ import { CommonModule } from "@angular/common";
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: '[#app-home]',
-  standalone: true,
-  imports: [MatTooltipModule, CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: '[#app-home]',
+    imports: [MatTooltipModule, CommonModule, RainsScrollDirective, GenericComponent, Parallax2Directive, NgbTooltipModule, LandingPageComponent, StarsComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
@@ -39,7 +38,7 @@ export class HomeComponent {
 
   aboutConfig: any = {
     active: () => this.scrollAmount == 0,
-    highText: `Passionate Full Stack Developer 2+ years of experience adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
+    highText: `Passionate Full Stack Developer 3+ years of experience adept in both front-end and back-end development.`,// Quick learner, team player, and poised to elevate any web development project. I'm adaptable and collaborative, ready to enhance any web project.`,
     pageTitle: "Mohammed Shaikh",
     imageSource: "./assets/images/AdobeStock_175632386-e1538970544824-1920x960.jpeg"
   };

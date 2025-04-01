@@ -2,11 +2,10 @@ import { AfterViewInit, Component, Input } from '@angular/core';
 import { CubeComponent } from '../cube/cube.component';
 
 @Component({
-  selector: '[#app-cubes]',
-  standalone: true,
-  imports: [CubeComponent],
-  templateUrl: './cubes.component.html',
-  styleUrl: './cubes.component.scss'
+    selector: '[#app-cubes]',
+    imports: [CubeComponent],
+    templateUrl: './cubes.component.html',
+    styleUrl: './cubes.component.scss'
 })
 export class CubesComponent implements AfterViewInit {
   @Input() size!: string
